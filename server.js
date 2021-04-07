@@ -35,3 +35,14 @@ const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
 
+let options = {
+  method: "GET",
+  headers: JSON.parse(process.env.HEADER)
+};
+
+fetch(
+  process.env.API_URL ,
+  options
+)
+  .then(res => res.json()) // expecting a json response
+  .then(json => console.log(json));
