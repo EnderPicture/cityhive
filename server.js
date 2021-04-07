@@ -3,7 +3,6 @@
 
 // we've started you off with Express (https://expressjs.com/)
 // but feel free to use whatever libraries or frameworks you'd like through `package.json`.
-const curl = new (require( 'curl-request' ))();
 const express = require("express");
 const app = express();
 
@@ -33,8 +32,3 @@ app.get("/dreams", (request, response) => {
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
-
-
-
-let url = "https://www.instagram.com/graphql/query/?query_id=17888483320059182&id=9270148917&first=12";
-
