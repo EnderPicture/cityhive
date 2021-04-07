@@ -13,6 +13,15 @@ const helper = require("./.data/helper");
 // instagram post data goes here
 let instasgramData = {};
 
+fs.readFile('./.data/data.json', 'utf8', (err, data) => {
+    if (err) {
+        console.log('no data file');
+    } else {
+        instasgramData = JSON.parse(data);
+    }
+});
+
+
 // make all the files in 'public' available
 // https://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
@@ -42,7 +51,8 @@ let options = {
 fetch(helper.apiURL, options)
   .then(res => res.json()) // expecting a json response
   .then(json => {
-    instasgramData = json;
+    instasgramData = json.data.user.edge_owner_to_timeline_media.edges;
+  
     let data = JSON.stringify(json);
     fs.writeFile("./.data/data.json", data, err => {
       if (err) {
