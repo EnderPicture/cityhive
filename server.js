@@ -7,6 +7,11 @@ const express = require("express");
 const app = express();
 
 const fetch = require('node-fetch');
+module.exports = (url, args = {}) => {
+  args.headers = args.headers || {}
+  args.headers['user-agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'
+  return fetch(url, args)
+}
 
 // our default array of dreams
 const dreams = [
@@ -34,3 +39,14 @@ app.get("/dreams", (request, response) => {
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
+
+
+let options = {
+    // These properties are part of the Fetch Standard
+    method: 'GET',
+    headers: {},        // request headers. format is the identical to that accepted by the Headers constructor (see below)
+};
+
+fetch('https://httpbin.org/post', { method: 'POST', body: 'a=1' })
+    .then(res => res.text()) // expecting a json response
+    .then(json => console.log(json));
