@@ -37,11 +37,10 @@ const listener = app.listen(process.env.PORT, () => {
 
 
 let url = "https://www.instagram.com/graphql/query/?query_id=17888483320059182&id=9270148917&first=12";
-
 let settings = { method: "Get" };
 
 fetch(url, settings)
-    .then(res => res.json())
+    .then(res => res.text())
     .then((json) => {
         console.log(json);
     });
