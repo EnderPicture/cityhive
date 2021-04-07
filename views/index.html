@@ -15,7 +15,7 @@
         <div class="left__con">
           <div class="tags">
             <button :class="{'tag':true, 'tag_selected':selected[tag.name]===true}" v-for="tag in hashtags" @click="tagClicked(tag.name)">
-              {{tag.name}}
+              {{tag.name}}-{{tag.count}}
             </button>
           </div>
         </div>
@@ -23,7 +23,7 @@
       <div class="right">
         <div class="right__con">
           <div class="posts">
-            <div class="post" v-for="post in instagramDataFiltered">
+            <div class="post" v-for="post in instagramDataFiltered" :key="id">
               <img :src="post.thumbnail" alt="" loading="lazy" />
               <p>
                 {{post.caption}}

@@ -16,6 +16,7 @@ const App = {
           thumbnail: post.node.thumbnail_src,
           caption: caption,
           hashtags: hashtags === null ? [] : hashtags,
+          id: post.node.id,
         };
       });
     },
@@ -24,6 +25,8 @@ const App = {
         return this.instagramData;
       }
       
+      
+//       filter hashtags
       return this.instagramData.filter(post => {
         let selected = false;
         for (let tag in this.selected) {
@@ -34,6 +37,8 @@ const App = {
         }
         return selected;
       });
+      
+      
     },
     hashtags() {
       let tags = {};
@@ -41,7 +46,7 @@ const App = {
         if (post.hashtags !== null) {
           post.hashtags.forEach(hashTag => {
             if (tags[hashTag] === undefined) {
-              tags[hashTag] = 1;
+              tags[hashTag] = 0;
             }
             tags[hashTag]++;
           });

@@ -39,12 +39,16 @@ body {
 
 .posts {
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(5, 5fr);
   gap: 40px;
 }
 
 .post > img {
   width: 100%;
+}
+.post > p {
+  max-height: 100px;
+  overflow: hidden;
 }
 
 .tags {
@@ -63,3 +67,4 @@ body {
 .tag_selected {
   background-color: #00E6A2;
 }
+
