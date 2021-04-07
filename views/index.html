@@ -6,15 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CityHive</title>
 
+    <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
     <div id="app">
-      <div v-for="post in instagramData">
-        <img :src="post.thumbnail" alt="" loading="lazy">
-        <p>
-          {{post.caption}}
-        </p>
+      <div class="left"></div>
+      <div class="right">
+        <div v-for="post in instagramData">
+          <img :src="post.thumbnail" alt="" loading="lazy" />
+          <p>
+            {{post.caption}}
+          </p>
+        </div>
       </div>
     </div>
     <script src="script.js"></script>
