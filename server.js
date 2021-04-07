@@ -3,7 +3,7 @@
 
 // we've started you off with Express (https://expressjs.com/)
 // but feel free to use whatever libraries or frameworks you'd like through `package.json`.
-const fetch = require('node-fetch');
+const curl = new (require( 'curl-request' ))();
 const express = require("express");
 const app = express();
 
@@ -37,10 +37,4 @@ const listener = app.listen(process.env.PORT, () => {
 
 
 let url = "https://www.instagram.com/graphql/query/?query_id=17888483320059182&id=9270148917&first=12";
-let settings = { method: "Get" };
 
-fetch(url, settings)
-    .then(res => res.text())
-    .then((json) => {
-        console.log(json);
-    });
