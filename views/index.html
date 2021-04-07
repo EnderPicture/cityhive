@@ -13,15 +13,22 @@
     <div id="app">
       <div class="left">
         <div class="left__con">
+          <div class="tags">
+            <div class="tag" v-for="tag in hashtags">
+              {{tag.name}}
+            </div>
+          </div>
         </div>
       </div>
       <div class="right">
         <div class="right__con">
-          <div class="post" v-for="post in instagramData">
-            <img :src="post.thumbnail" alt="" loading="lazy" />
-            <p>
-              {{post.caption}}
-            </p>
+          <div class="posts">
+            <div class="post" v-for="post in instagramData">
+              <img :src="post.thumbnail" alt="" loading="lazy" />
+              <p>
+                {{post.caption}}
+              </p>
+            </div>
           </div>
         </div>
       </div>

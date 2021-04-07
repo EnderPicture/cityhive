@@ -37,7 +37,7 @@ body {
   transform: translateZ(0);
 }
 
-.right__con {
+.posts {
   display: grid;
   grid-template-columns: repeat(5, auto);
   gap: 40px;
@@ -45,4 +45,9 @@ body {
 
 .post > img {
   width: 100%;
+}
+
+.tags {
+  display: flex;
+  flex
 }

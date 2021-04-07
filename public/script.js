@@ -33,11 +33,15 @@ const App = {
       let sorted = [];
       
       for (let key in tags) {
-        sorted.push(key)
-        sorted.
+        sorted.push({
+          name: key,
+          count: tags[key],
+        })
       }
       
-      return tags;
+      sorted.sort((a,b) => b.count - a.count);
+      
+      return sorted;
     }
   },
   created() {
