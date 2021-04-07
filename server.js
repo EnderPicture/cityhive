@@ -7,13 +7,10 @@ const express = require("express");
 const app = express();
 
 const fetch = require("node-fetch");
+const helper = require("./.data/helper");
 
 // our default array of dreams
-const dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
+const instasgramData = {};
 
 // make all the files in 'public' available
 // https://expressjs.com/en/starter/static-files.html
@@ -25,9 +22,9 @@ app.get("/", (request, response) => {
 });
 
 // send the default array of dreams to the webpage
-app.get("/dreams", (request, response) => {
+app.get("/instagram-data", (request, response) => {
   // express helps us take JS objects and send them as JSON
-  response.json(dreams);
+  response.json(instasgramData);
 });
 
 // listen for requests :)
@@ -35,17 +32,11 @@ const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
 
-// let options = {
-//   method: "GET",
-//   headers: JSON.parse(process.env.HEADER)
-// };
+let options = {
+  method: "GET",
+  headers: helper.header
+};
 
-// fetch(
-//   process.env.API_URL ,
-//   options
-// )
-//   .then(res => res.json()) // expecting a json response
-//   .then(json => console.log(json));
-
-
-console.log((Buffer.from(process.env.HEADER, 'utf-8')).toString('base64'));
+fetch(helper.apiURL, options)
+  .then(res => res.json()) // expecting a json response
+  .then(json => instasgramData);
