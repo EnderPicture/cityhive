@@ -11,13 +11,18 @@
   </head>
   <body>
     <div id="app">
-      <div class="left"></div>
+      <div class="left">
+        <div class="left__con">
+        </div>
+      </div>
       <div class="right">
-        <div v-for="post in instagramData">
-          <img :src="post.thumbnail" alt="" loading="lazy" />
-          <p>
-            {{post.caption}}
-          </p>
+        <div class="right__con">
+          <div v-for="post in instagramData">
+            <img :src="post.thumbnail" alt="" loading="lazy" />
+            <p>
+              {{post.caption}}
+            </p>
+          </div>
         </div>
       </div>
     </div>
