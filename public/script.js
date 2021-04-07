@@ -29,7 +29,15 @@ const App = {
           });
         }
       });
-      return;
+      
+      let sorted = [];
+      
+      for (let key in tags) {
+        sorted.push(key)
+        sorted.
+      }
+      
+      return tags;
     }
   },
   created() {
