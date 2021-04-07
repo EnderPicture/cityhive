@@ -1,7 +1,8 @@
 const App = {
   data() {
     return {
-      instagramRawData: []
+      instagramRawData: [],
+      selected: [],
     };
   },
   computed: {
@@ -42,6 +43,11 @@ const App = {
       sorted.sort((a,b) => b.count - a.count);
       
       return sorted;
+    }
+  },
+  methods: {
+    tagClicked(index) {
+      selected[index] = 
     }
   },
   created() {

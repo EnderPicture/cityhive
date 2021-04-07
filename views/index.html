@@ -14,9 +14,9 @@
       <div class="left">
         <div class="left__con">
           <div class="tags">
-            <div class="tag" v-for="tag in hashtags">
+            <button class="tag" v-for="(tag, index) in hashtags" @click="tagClicked(index)">
               {{tag.name}}
-            </div>
+            </button>
           </div>
         </div>
       </div>
