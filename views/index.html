@@ -11,7 +11,10 @@
   <body>
     <div id="app">
       <div v-for="post in instagramData">
-        <img :src="post.node.thumbnail_resources[1].src" alt="">
+        <img :src="post.node.thumbnail_src" alt="">
+        <p>
+          {{post.node.edge_media_to_caption.edges[0].node.text}}
+        </p>
       </div>
     </div>
     <script src="script.js"></script>

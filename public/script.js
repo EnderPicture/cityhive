@@ -1,8 +1,26 @@
 const App = {
   data() {
     return {
-      instagramData: [],
+      instagramRawData: [],
     };
+  },
+  compuated: {
+    instagramData() {
+      instagramRawData.map(post => {
+        return {
+          
+        };
+      });
+      return [];
+    },
+    hashtags() {
+      let array = [];
+      this.instagramData.forEach(post => {
+        text = 
+        .match(/#\w+/g)
+      });
+      return array;
+    }
   },
   created() {
     fetch("/instagram-data")
