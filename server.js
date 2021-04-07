@@ -6,11 +6,12 @@
 const express = require("express");
 const app = express();
 
+const fs = require("fs");
 const fetch = require("node-fetch");
 const helper = require("./.data/helper");
 
-// our default array of dreams
-const instasgramData = {};
+// instagram post data goes here
+let instasgramData = {};
 
 // make all the files in 'public' available
 // https://expressjs.com/en/starter/static-files.html
@@ -21,7 +22,7 @@ app.get("/", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
 });
 
-// send the default array of dreams to the webpage
+// send instagram data to webpage
 app.get("/instagram-data", (request, response) => {
   // express helps us take JS objects and send them as JSON
   response.json(instasgramData);
@@ -32,6 +33,7 @@ const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
 
+// get instagram data
 let options = {
   method: "GET",
   headers: helper.header
@@ -39,4 +41,13 @@ let options = {
 
 fetch(helper.apiURL, options)
   .then(res => res.json()) // expecting a json response
-  .then(json => instasgramData);
+  .then(json => {
+    instasgramData = json;
+    let data = JSON.stringify(json);
+    fs.writeFile("./.data/data.json", data, err => {
+      if (err) {
+        throw err;
+      }
+      console.log("JSON data is saved.");
+    });
+  });
