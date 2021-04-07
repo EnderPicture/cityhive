@@ -14,7 +14,7 @@
       <div class="left">
         <div class="left__con">
           <div class="tags">
-            <button :class="{'tag':true, 'tag_selected':selected[index]===true}" v-for="(tag, index) in hashtags" @click="tagClicked(index)">
+            <button :class="{'tag':true, 'tag_selected':selected[tag.name]===true}" v-for="tag in hashtags" @click="tagClicked(tag.name)">
               {{tag.name}}
             </button>
           </div>

@@ -2,32 +2,37 @@ const App = {
   data() {
     return {
       instagramRawData: [],
-      selected: [],
+      selected: {},
     };
   },
   computed: {
     instagramData() {
       return this.instagramRawData.map(post => {
         const caption = post.node.edge_media_to_caption.edges[0].node.text;
+        const hashtags = caption.match(/#\w+/g);
 
         return {
           img: post.node.display_url,
           thumbnail: post.node.thumbnail_src,
           caption: caption,
-          hashtags: caption.match(/#\w+/g)
+          hashtags: hashtags === null ? [] : hashtags,
         };
       });
     },
     instagramDataFiltered() {
-      if (this.selected.length === 0) {
+      if (Object.keys(this.selected).length === 0) {
         return this.instagramData;
       }
       
       return this.instagramData.filter(post => {
         let selected = false;
-        for (let index in this.selected) {
-          
+        for (let tag in this.selected) {
+          if (post.hashtags.indexOf(tag) > -1) {
+            selected = true;
+            break;
+          }
         }
+        return selected;
       });
     },
     hashtags() {
@@ -58,11 +63,11 @@ const App = {
     }
   },
   methods: {
-    tagClicked(index) {
-      if (this.selected[index] !== undefined) {
-        delete this.selected[index]
+    tagClicked(tag) {
+      if (this.selected[tag] !== undefined) {
+        delete this.selected[tag]
       } else {
-        this.selected[index] = true;
+        this.selected[tag] = true;
       }
     }
   },
