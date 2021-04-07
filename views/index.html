@@ -17,7 +17,7 @@
       </div>
       <div class="right">
         <div class="right__con">
-          <div v-for="post in instagramData">
+          <div class="post" v-for="post in instagramData">
             <img :src="post.thumbnail" alt="" loading="lazy" />
             <p>
               {{post.caption}}

@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   font-family: sans-serif;
   margin: 0;
@@ -20,8 +19,8 @@ body {
   grid-template-columns: 400px auto;
 }
 
-.left .right {
-  overflow-y: scroll;
+.left, .right {
+  overflow-y: auto;
 }
 .left {
   grid-column-start: 1;
@@ -30,9 +29,20 @@ body {
 .right {
   grid-column-start: 2;
   grid-column-end: 3;
-  display: flex;
-  flex-direction: column;
+/*   display: flex; */
+/*   flex-direction: column; */
 }
+
+.left__con, .right__con {
+  transform: translateZ(0);
+}
+
 .right__con {
-  
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 40px;
+}
+
+.post > img {
+  width: 100%;
 }
