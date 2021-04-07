@@ -9,8 +9,10 @@
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
-    <div id="counter">
-      Counter: {{ counter }}
+    <div id="app">
+      <div v-for="post in instagramData">
+        <img :src="post.node.thumbnail_resources[1].src" alt="">
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

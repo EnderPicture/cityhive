@@ -1,18 +1,16 @@
-let instagramData = {};
-fetch("/instagram-data")
-  .then(response => response.json()) // parse the JSON from the server
-  .then(data => {
-    instagramData = data;
-  });
-
-
-
-const Counter = {
+const App = {
   data() {
     return {
-      counter: 0
-    }
+      instagramData: [],
+    };
+  },
+  created() {
+    fetch("/instagram-data")
+      .then(response => response.json()) // parse the JSON from the server
+      .then(data => {
+        this.instagramData.push(...data);
+      });
   }
-}
+};
 
-Vue.createApp(Counter).mount('#counter')
+Vue.createApp(App).mount("#app");
