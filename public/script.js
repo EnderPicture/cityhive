@@ -14,15 +14,27 @@ const App = {
           img: post.node.display_url,
           thumbnail: post.node.thumbnail_src,
           caption: caption,
-          hashTags: caption.match(/#\w+/g)
+          hashtags: caption.match(/#\w+/g)
         };
+      });
+    },
+    instagramDataFiltered() {
+      if (this.selected.length === 0) {
+        return this.instagramData;
+      }
+      
+      return this.instagramData.filter(post => {
+        let selected = false;
+        for (let index in this.selected) {
+          
+        }
       });
     },
     hashtags() {
       let tags = {};
       this.instagramData.forEach(post => {
-        if (post.hashTags !== null) {
-          post.hashTags.forEach(hashTag => {
+        if (post.hashtags !== null) {
+          post.hashtags.forEach(hashTag => {
             if (tags[hashTag] === undefined) {
               tags[hashTag] = 1;
             }
@@ -47,7 +59,11 @@ const App = {
   },
   methods: {
     tagClicked(index) {
-      selected[index] = 
+      if (this.selected[index] !== undefined) {
+        delete this.selected[index]
+      } else {
+        this.selected[index] = true;
+      }
     }
   },
   created() {

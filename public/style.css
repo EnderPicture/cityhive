@@ -60,3 +60,6 @@ body {
   color: #fff;
   border: none;
 }
+.tag_selected {
+  background-color: #00E6A2;
+}
