@@ -20,7 +20,7 @@ body {
 }
 
 .left, .right {
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 .left {
   grid-column-start: 1;
