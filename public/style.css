@@ -70,10 +70,15 @@ body {
 .post > img {
   width: 100%;
 }
+.post > h2 {
+  margin: 16px;
+  margin-bottom: 8px;
+}
 .post > p {
   max-height: 100px;
   overflow: hidden;
-  margin: 10px;
+  margin: 16px;
+  margin-top: 0;
 }
 
 .tags {
