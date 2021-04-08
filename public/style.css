@@ -58,6 +58,8 @@ body {
   text-decoration: none;
   transition: transform 0.5s ease;
   
+  background-color: white;
+  
   display: grid;
   grid-template-rows: fit-content fit-content auto fit-content;
 }
@@ -118,7 +120,6 @@ body {
 
 .list-complete-item {
   transition: all 0.8s ease;
-  display: inline-block;
   margin-right: 10px;
 }
 
@@ -129,5 +130,6 @@ body {
 }
 
 .list-complete-leave-active {
-  position: absolute;
+/*   position: absolute; */
+  display: none;
 }
