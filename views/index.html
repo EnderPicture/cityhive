@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CityHive</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/vue@next"></script>
   </head>
@@ -16,7 +19,11 @@
       <div class="left">
         <div class="left__con">
           <div class="tags">
-            <button :class="{'tag':true, 'tag_selected':selected[tag.name]===true}" v-for="tag in hashtags" @click="tagClicked(tag.name)">
+            <button
+              :class="{'tag':true, 'tag_selected':selected[tag.name]===true}"
+              v-for="tag in hashtags"
+              @click="tagClicked(tag.name)"
+            >
               {{tag.name}} - {{tag.count}}
             </button>
           </div>
@@ -25,14 +32,21 @@
       <div class="right">
         <div class="right__con">
           <div class="posts">
-            <a class="post" v-for="post in instagramDataFiltered" :key="id" :href="'https://www.instagram.com/p/'+post.shortcode+'/'" target="_blank">
+            <a
+              class="post"
+              v-for="post in instagramDataFiltered"
+              :key="id"
+              :href="'https://www.instagram.com/p/'+post.shortcode+'/'"
+              target="_blank"
+            >
               <img :src="post.thumbnail" alt="" loading="lazy" />
               <h2 v-if="post.hashtags.length > 0">
-                {{post.hashtags[0].substring(1).replace(/([A-Z])/g, ' $1').trim()}}
+                {{post.hashtags[0].substring(1).replace(/([A-Z])/g, '$1').trim()}}
               </h2>
               <p>
                 {{post.caption}}
               </p>
+              <p class="post__learn">Learn more</p>
             </a>
           </div>
         </div>
