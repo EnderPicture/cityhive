@@ -44,12 +44,25 @@ body {
   padding: 40px;
 }
 
+.post {
+  box-shadow: 
+    0 .5px .5px rgba(0,0,0,0.05),
+    0 1px 1px rgba(0,0,0,0.05),
+    0 2px 2px rgba(0,0,0,0.05),
+    0 4px 4px rgba(0,0,0,0.05), 
+    0 8px 8px rgba(0,0,0,0.05), 
+    0 16px 16px rgba(0,0,0,0.05);
+  
+  border-radius: .5rem;
+  overflow: hidden;
+}
 .post > img {
   width: 100%;
 }
 .post > p {
   max-height: 100px;
   overflow: hidden;
+  margin: 10px;
 }
 
 .tags {
