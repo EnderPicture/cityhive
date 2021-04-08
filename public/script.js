@@ -75,9 +75,11 @@ const App = {
       let removed = beforeIds.filter(id => afterIds.indexOf(id) < 0);
       
       removed.forEach(id => {
+        this.$refs[id].style.width = this.$refs[id].clientWidth + "px"
+        
         
       })
-      this.$refs[idx].style.width= this.$refs[idx].clientWidth + "px"
+      
     }
   },
   methods: {
