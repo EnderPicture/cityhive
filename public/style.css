@@ -61,7 +61,7 @@ body {
   background-color: white;
   
   display: grid;
-  grid-template-rows: min-content fit-content auto fit-content;
+  grid-template-rows: min-content min-content auto min-content;
 }
 .post:hover {
   transition: transform 0.05s ease;
