@@ -40,13 +40,13 @@
               target="_blank"
             >
               <img :src="post.thumbnail" alt="" loading="lazy" />
-              <h2 v-if="post.hashtags.length > 0">
-                {{post.hashtags[0].substring(1).replace(/([A-Z])/g, ' $1').trim()}}
-              </h2>
-              <p>
-                {{post.caption}}
-              </p>
-              <p class="post__learn">Learn more</p>
+                <h2 v-if="post.hashtags.length > 0">
+                  {{post.hashtags[0].substring(1).replace(/([A-Z])/g, ' $1').trim()}}
+                </h2>
+                <p>
+                  {{post.caption}}
+                </p>
+                <p class="post__learn">Learn more</p>
             </a>
           </transition-group>
         </div>
