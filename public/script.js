@@ -16,9 +16,15 @@ const App = {
           thumbnail: post.node.thumbnail_src,
           caption: caption,
           hashtags: hashtags === null ? [] : hashtags,
-          firstHashtag: hashtags === null ? null : hashtags[0].substring(1).replace(/([A-Z])/g, ' $1').trim(),
+          firstHashtag:
+            hashtags === null
+              ? null
+              : hashtags[0]
+                  .substring(1)
+                  .replace(/([A-Z])/g, " $1")
+                  .trim(),
           id: post.node.id,
-          shortcode: post.node.shortcode,
+          shortcode: post.node.shortcode
         };
       });
     },
@@ -70,16 +76,20 @@ const App = {
     instagramDataFiltered(after, before) {
       let afterIds = after.map(post => post.id);
       let beforeIds = before.map(post => post.id);
-      
+
       // find the removed posts
       let removed = beforeIds.filter(id => afterIds.indexOf(id) < 0);
-      
+
       removed.forEach(id => {
-        this.$refs[id].style.width = this.$refs[id].clientWidth + "px"
-        
-        
-      })
-      
+        let element = this.$refs[id];
+        element.style.width = element.clientWidth + "px";
+
+        let absRect = element.getBoundingClientRect();
+        let relRect = element.parentElement.getBoundingClientRect();
+
+        element.style.left = absRect.left - relRect.left + "px";
+        element.style.top = absRect.top - relRect.top + "px";
+      });
     }
   },
   methods: {
