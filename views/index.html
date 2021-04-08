@@ -33,7 +33,7 @@
         <div class="right__con">
           <transition-group tag="div" name="list-complete" class="posts">
             <a
-              class="post"
+              class="post list-complete-item"
               v-for="post in instagramDataFiltered"
               :key="post.id"
               :href="'https://www.instagram.com/p/'+post.shortcode+'/'"
@@ -46,7 +46,7 @@
                 <p>
                   {{post.caption}}
                 </p>
-                <p class="post__learn">Learn more</p>
+                <p class="learn">Learn more</p>
             </a>
           </transition-group>
         </div>
