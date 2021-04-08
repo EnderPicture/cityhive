@@ -41,10 +41,9 @@
               target="_blank"
             >
               <img :src="post.thumbnail" alt="" loading="lazy" />
-              <h2 v-if="post.firstHashtag !== null">
-                {{post.firstHashtag}}
+              <h2>
+                {{post.title}}
               </h2>
-              <h2 v-else>CityHive</h2>
               <p>
                 {{post.caption}}
                 <span class="gradient"></span>

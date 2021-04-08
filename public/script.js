@@ -16,9 +16,9 @@ const App = {
           thumbnail: post.node.thumbnail_src,
           caption: caption,
           hashtags: hashtags === null ? [] : hashtags,
-          firstHashtag:
+          title:
             hashtags === null
-              ? null
+              ? 'CithHive'
               : hashtags[0]
                   .substring(1)
                   .replace(/([A-Z])/g, " $1")

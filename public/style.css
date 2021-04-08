@@ -42,7 +42,7 @@ body {
 .posts {
   display: grid;
   grid-template-columns: repeat(3, 5fr);
-  grid-auto-rows: 420px;
+  grid-auto-rows: 430px;
   margin: auto;
   max-width: 900px;
   gap: 20px;
