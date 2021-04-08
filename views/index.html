@@ -15,7 +15,7 @@
         <div class="left__con">
           <div class="tags">
             <button :class="{'tag':true, 'tag_selected':selected[tag.name]===true}" v-for="tag in hashtags" @click="tagClicked(tag.name)">
-              {{tag.name}}-{{tag.count}}
+              {{tag.name}} - {{tag.count}}
             </button>
           </div>
         </div>
