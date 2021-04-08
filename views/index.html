@@ -31,24 +31,24 @@
       </div>
       <div class="right">
         <div class="right__con">
-          <div class="posts">
+          <transition-group tag="div" name="list-complete" class="posts">
             <a
               class="post"
               v-for="post in instagramDataFiltered"
-              :key="id"
+              :key="post.id"
               :href="'https://www.instagram.com/p/'+post.shortcode+'/'"
               target="_blank"
             >
               <img :src="post.thumbnail" alt="" loading="lazy" />
               <h2 v-if="post.hashtags.length > 0">
-                {{post.hashtags[0].substring(1).replace(/([A-Z])/g, '$1').trim()}}
+                {{post.hashtags[0].substring(1).replace(/([A-Z])/g, ' $1').trim()}}
               </h2>
               <p>
                 {{post.caption}}
               </p>
               <p class="post__learn">Learn more</p>
             </a>
-          </div>
+          </transition-group>
         </div>
       </div>
     </div>
