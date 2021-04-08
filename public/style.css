@@ -42,6 +42,7 @@ body {
 .posts {
   display: grid;
   grid-template-columns: repeat(5, 5fr);
+  grid-auto-rows: min-content;
   gap: 20px;
   padding: 40px;
 }
