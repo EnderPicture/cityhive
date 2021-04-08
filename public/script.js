@@ -1,3 +1,9 @@
+function toTitleCase(str) {
+  return str.toLowerCase().split(' ').map(function (word) {
+    return (word.charAt(0).toUpperCase() + word.slice(1));
+  }).join(' ');
+}
+
 const App = {
   data() {
     return {
@@ -10,19 +16,21 @@ const App = {
       return this.instagramRawData.map(post => {
         const caption = post.node.edge_media_to_caption.edges[0].node.text;
         const hashtags = caption.match(/#\w+/g);
-
+        
+        let title = hashtags === null
+              ? 'CithHive'
+              : hashtags[0]
+                  .substring(1)
+                  .replace(/([A-Z])/g, " $1")
+                  .trim();
+        title = toTitleCase(title);
+        
         return {
           img: post.node.display_url,
           thumbnail: post.node.thumbnail_src,
           caption: caption,
           hashtags: hashtags === null ? [] : hashtags,
-          title:
-            hashtags === null
-              ? 'CithHive'
-              : hashtags[0]
-                  .substring(1)
-                  .replace(/([A-Z])/g, " $1")
-                  .trim(),
+          title: title,
           id: post.node.id,
           shortcode: post.node.shortcode
         };
