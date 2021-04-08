@@ -16,7 +16,7 @@ body {
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 400px auto;
+  grid-template-columns: 500px auto;
 }
 
 .left, .right {
@@ -41,6 +41,7 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 5fr);
   gap: 40px;
+  padding: 40px;
 }
 
 .post > img {
@@ -54,6 +55,7 @@ body {
 .tags {
   display: flex;
   flex-wrap: wrap;
+  padding: 40px;
 }
 
 .tag {
