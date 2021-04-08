@@ -83,6 +83,7 @@ const App = {
       removed.forEach(id => {
         let element = this.$refs[id];
         element.style.width = element.clientWidth + "px";
+        element.style.height = element.clientHeight + "px";
 
         let absRect = element.getBoundingClientRect();
         let relRect = element.parentElement.getBoundingClientRect();
