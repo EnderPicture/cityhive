@@ -23,12 +23,12 @@
       <div class="right">
         <div class="right__con">
           <div class="posts">
-            <div class="post" v-for="post in instagramDataFiltered" :key="id">
+            <a class="post" v-for="post in instagramDataFiltered" :key="id" :href="'https://www.instagram.com/p/'+post.shortcode+'/'" target="_blank">
               <img :src="post.thumbnail" alt="" loading="lazy" />
               <p>
                 {{post.caption}}
               </p>
-            </div>
+            </a>
           </div>
         </div>
       </div>

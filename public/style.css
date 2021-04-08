@@ -40,7 +40,7 @@ body {
 .posts {
   display: grid;
   grid-template-columns: repeat(5, 5fr);
-  gap: 40px;
+  gap: 20px;
   padding: 40px;
 }
 
@@ -55,6 +55,17 @@ body {
   
   border-radius: .5rem;
   overflow: hidden;
+  color: black;
+  text-decoration: none;
+  transition: transform .5s ease;
+}
+.post:hover {
+  transition: transform .05s ease;
+  transform: scale(0.98);
+}
+.post:active {
+  transition: transform .05s ease;
+  transform: scale(0.96);
 }
 .post > img {
   width: 100%;

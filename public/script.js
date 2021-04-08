@@ -2,7 +2,7 @@ const App = {
   data() {
     return {
       instagramRawData: [],
-      selected: {},
+      selected: {}
     };
   },
   computed: {
@@ -17,6 +17,7 @@ const App = {
           caption: caption,
           hashtags: hashtags === null ? [] : hashtags,
           id: post.node.id,
+          shortcode: post.node.shortcode,
         };
       });
     },
@@ -24,9 +25,8 @@ const App = {
       if (Object.keys(this.selected).length === 0) {
         return this.instagramData;
       }
-      
-      
-//       filter hashtags
+
+      // filter hashtags
       return this.instagramData.filter(post => {
         let selected = false;
         for (let tag in this.selected) {
@@ -37,8 +37,6 @@ const App = {
         }
         return selected;
       });
-      
-      
     },
     hashtags() {
       let tags = {};
@@ -52,25 +50,25 @@ const App = {
           });
         }
       });
-      
+
       let sorted = [];
-      
+
       for (let key in tags) {
         sorted.push({
           name: key,
-          count: tags[key],
-        })
+          count: tags[key]
+        });
       }
-      
-      sorted.sort((a,b) => b.count - a.count);
-      
+
+      sorted.sort((a, b) => b.count - a.count);
+
       return sorted;
     }
   },
   methods: {
     tagClicked(tag) {
       if (this.selected[tag] !== undefined) {
-        delete this.selected[tag]
+        delete this.selected[tag];
       } else {
         this.selected[tag] = true;
       }
