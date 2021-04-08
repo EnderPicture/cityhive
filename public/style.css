@@ -64,7 +64,7 @@ body {
   background-color: white;
   
   display: grid;
-  grid-template-rows: min-content min-content auto min-content;
+  grid-template-rows: 215px min-content auto min-content;
 }
 .post:hover {
   transition: transform 0.05s ease;
@@ -76,11 +76,11 @@ body {
 }
 .post img {
   width: 100%;
-  display: block;
-  margin-bottom: 16px;
+  height: 100%;
+  object-fit: cover;
 }
 .post h2 {
-  margin: 0 16px 8px 16px;
+  margin: 16px 16px 8px 16px;
 }
 .post p {
   margin: 0 16px;

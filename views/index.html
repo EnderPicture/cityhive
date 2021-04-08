@@ -40,7 +40,9 @@
               :href="'https://www.instagram.com/p/'+post.shortcode+'/'"
               target="_blank"
             >
-              <img :src="post.thumbnail" alt="" loading="lazy" />
+              <div>
+                <img :src="post.thumbnail" alt="" loading="lazy" />  
+              </div>
               <h2>
                 {{post.title}}
               </h2>
