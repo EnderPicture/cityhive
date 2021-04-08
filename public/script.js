@@ -16,6 +16,7 @@ const App = {
           thumbnail: post.node.thumbnail_src,
           caption: caption,
           hashtags: hashtags === null ? [] : hashtags,
+          firstHashtag: hashtags === null ? null : hashtags[0].substring(1).replace(/([A-Z])/g, ' $1').trim(),
           id: post.node.id,
           shortcode: post.node.shortcode,
         };

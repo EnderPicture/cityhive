@@ -40,15 +40,15 @@
               target="_blank"
             >
               <img :src="post.thumbnail" alt="" loading="lazy" />
-                <h2 v-if="post.hashtags.length > 0">
-                  {{post.hashtags[0].substring(1).replace(/([A-Z])/g, ' $1').trim()}}
-                </h2>
-                <h2 v-else>CityHive</h2>
-                <p>
-                  {{post.caption}}
-                  <span class="gradient"></span>
-                </p>
-                <p class="learn">Learn more</p>
+              <h2 v-if="post.firstHashtag !== null">
+                {{post.firstHashtag}}
+              </h2>
+              <h2 v-else>CityHive</h2>
+              <p>
+                {{post.caption}}
+                <span class="gradient"></span>
+              </p>
+              <p class="learn">Learn more</p>
             </a>
           </transition-group>
         </div>
