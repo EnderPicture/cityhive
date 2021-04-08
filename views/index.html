@@ -35,6 +35,7 @@
             <a
               class="post list-complete-item"
               v-for="post in instagramDataFiltered"
+              :ref="post.id"
               :key="post.id"
               :href="'https://www.instagram.com/p/'+post.shortcode+'/'"
               target="_blank"

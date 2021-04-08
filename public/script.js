@@ -66,6 +66,20 @@ const App = {
       return sorted;
     }
   },
+  watch: {
+    instagramDataFiltered(after, before) {
+      let afterIds = after.map(post => post.id);
+      let beforeIds = before.map(post => post.id);
+      
+      // find the removed posts
+      let removed = beforeIds.filter(id => afterIds.indexOf(id) < 0);
+      
+      removed.forEach(id => {
+        
+      })
+      this.$refs[idx].style.width= this.$refs[idx].clientWidth + "px"
+    }
+  },
   methods: {
     tagClicked(tag) {
       if (this.selected[tag] !== undefined) {

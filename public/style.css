@@ -143,5 +143,5 @@ body {
 }
 
 .list-complete-leave-active {
-  display: none;
+  position: absolute;
 }
