@@ -43,23 +43,22 @@ const listener = app.listen(process.env.PORT, () => {
 });
 
 // get instagram data
-// used once or to update
 
-// let options = {
-//   method: "GET",
-//   headers: helper.header
-// };
+let options = {
+  method: "GET",
+  headers: helper.header
+};
 
-// fetch(helper.apiURL, options)
-//   .then(res => res.json()) // expecting a json response
-//   .then(json => {
-//     instasgramData = json.data.user.edge_owner_to_timeline_media.edges;
+fetch(helper.apiURL, options)
+  .then(res => res.json()) // expecting a json response
+  .then(json => {
+    instasgramData = json.data.user.edge_owner_to_timeline_media.edges;
 
-//     let data = JSON.stringify(json);
-//     fs.writeFile("./.data/data.json", data, err => {
-//       if (err) {
-//         throw err;
-//       }
-//       console.log("JSON data is saved.");
-//     });
-//   });
+    let data = JSON.stringify(json);
+    fs.writeFile("./.data/data.json", data, err => {
+      if (err) {
+        throw err;
+      }
+      console.log("JSON data is saved.");
+    });
+  });
