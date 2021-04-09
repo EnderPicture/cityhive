@@ -13,7 +13,7 @@ const App = {
     return {
       instagramRawData: [],
       selected: {},
-      tagsGroups: [
+      tagGroups: [
         {
           name: "Type",
           tags: ["job"]
@@ -104,17 +104,18 @@ const App = {
         }
         return selected;
       });
+      
+      
     },
     hashtags() {
       let tags = {};
       this.instagramData.forEach(post => {
         if (post.hashtags !== null) {
           post.hashtags.forEach(hashTag => {
-            let low = hashTag.toLowerCase();
-            if (tags[low] === undefined) {
-              tags[low] = 0;
+            if (tags[hashTag] === undefined) {
+              tags[hashTag] = 0;
             }
-            tags[low]++;
+            tags[hashTag]++;
           });
         }
       });
