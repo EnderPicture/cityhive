@@ -142,13 +142,12 @@ const App = {
 
       // filter hashtags
       return this.instagramData.filter(post => {
-        let selected = false;
+        let selected = true;
         for (let tag in this.selected) {
           if (
-            post.hashtags.indexOf(tag.replaceAll(" ", "").toLowerCase()) > -1
+            post.hashtags.indexOf(tag.replaceAll(" ", "").toLowerCase()) < 0
           ) {
-            selected = true;
-            break;
+            selected = false;
           }
         }
         return selected;
