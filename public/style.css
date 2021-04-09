@@ -48,7 +48,7 @@ h3 {
   width: 100%;
   margin: auto;
   margin-bottom: 130px;
-  margin-top: 110px;
+  margin-top: 46px;
 }
 .title {
   font-family: Raleway;
@@ -82,11 +82,12 @@ h3 {
   max-width: var(--mid-width);
 }
 
+
 #app {
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 500px auto;
+  grid-template-columns: 360px auto;
 }
 
 .left,
@@ -148,7 +149,7 @@ h3 {
   height: 100%;
   object-fit: cover;
 }
-.post h2 {
+.post h3 {
   margin: 16px 16px 8px 16px;
 }
 .post p {
