@@ -84,16 +84,45 @@ const App = {
                 .replace(/([A-Z])/g, " $1")
                 .trim();
         title = toTitleCase(title);
-        
-        hashtags = hashtags === null
-              ? []
-              : hashtags.map(tag => tag.substring(1).toLowerCase());
-        
-        if (hashtags.indexOf('envirolab') > -1) {
-          hashtags.push('innovationlab');
+
+        hashtags =
+          hashtags === null
+            ? []
+            : hashtags.map(tag => tag.substring(1).toLowerCase());
+
+        //         bad hack
+        let events = {
+          CNdCQR4snpH: true,
+          CNag_nPsIhb: true,
+          CNVTxC7AKjz: true,
+          CNLEj_IlM6b: true,
+          CNIcVI4rcMr: true,
+          "CNF6-TqL_Y0": true,
+          "CNDXML-FLmn": true,
+          CM48IoLLlf4: true,
+          CM2ce4Yrd0p: true,
+          CM0TtaaL1rw: true,
+          CMxQpZOriOI: true,
+          CMuth4tlFcu: true,
+          CMm6k2zrAuR: true,
+          CMkYqhXrnGR: true,
+          CMh1jtdgPKh: true,
+          CMfPEjRglYI: true,
+          CMcxqm6L_kw: true,
+          CMVfkQXAZNF: true,
+          CMS1LKLhWz_: true,
+          CMP4kA7FN1B: true
+        };
+
+        if (events[post.node.id]) {
+          hashtags.push("event");
         }
 
-        return {
+        if (hashtags.indexOf("envirolab") > -1) {
+          hashtags.push("innovationlab");
+        }
+
+        let postObj = {
           img: post.node.display_url,
           thumbnail: post.node.thumbnail_src,
           caption: caption,
@@ -102,6 +131,8 @@ const App = {
           id: post.node.id,
           shortcode: post.node.shortcode
         };
+
+        return postObj;
       });
     },
     instagramDataFiltered() {
