@@ -19,6 +19,35 @@
       <nav class="nav"></nav>
       <div class="left">
         <div class="left__con">
+          
+          <div class="filters-top">
+            <p class="filters-lable">
+              FILTERS
+            </p>
+            <button class="filters-reset">
+              Reset
+            </button>
+          </div>
+          
+          <p class="tag-question">
+            Are you currently in
+          </p>
+          <button class="tag-button">
+            Select one option
+          </button>
+          
+          <p class="tag-question">
+            What’s your availability? 
+          </p>
+          <button class="tag-button">
+            Select one option
+          </button>
+          
+          <hr>
+          <p>
+            Select the options you’re interested in.
+          </p>
+          
           <section v-for="group in tagGroups">
             <h3 class="tag-headers">
               {{group.name}}

@@ -249,6 +249,40 @@ h3 {
   margin-top: 24px;
 }
 
+.filters-top {
+  display: flex;
+}
+.filters-lable {
+  margin: 0;
+  flex: 1;
+
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+.filters-reset {
+  padding: 0;
+  border: none;
+  background: none;
+  flex: 1;
+  text-align: right;
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+
+  letter-spacing: 0.02em;
+  text-decoration-line: underline;
+
+  color: var(--color-green-400);
+}
+
 .list-complete-item {
   transition: all 0.8s ease;
 }
