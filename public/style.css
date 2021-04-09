@@ -30,6 +30,11 @@
   --color-yellow-400: #B89C00;
 }
 
+button:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 2px var(--color-green-100);
+}
+
 body {
   font-family: Lato, sans-serif;
   margin: 0;
@@ -124,6 +129,14 @@ hr {
 .left__con,
 .right__con {
   transform: translateZ(0);
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
 }
 
 .posts {
@@ -243,8 +256,7 @@ hr {
 
 .tag-headers {
   margin: 0 var(--tags-padding);
-  
-  
+
   margin-bottom: 16px;
   margin-top: 24px;
 }
@@ -266,8 +278,11 @@ hr {
 .tag-headers span {
   flex: 1;
 }
-.tag-header img.selected {
-  transform: rotation(90deg);
+.tag-headers img {
+  transition: 0.2s ease;
+}
+.tag-headers img.selected {
+  transform: rotate(90deg);
 }
 
 .filters-top {
@@ -305,13 +320,13 @@ hr {
 }
 .filters-reset:hover {
   cursor: pointer;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .interest-question {
   margin: 0 0 0 var(--tags-padding);
   margin-top: 15px;
-  
+
   font-family: Lato;
   font-size: 16px;
   font-style: normal;
@@ -319,44 +334,51 @@ hr {
   line-height: 24px;
   letter-spacing: 0.02em;
   text-align: left;
-
 }
 
 .filters-select-con {
-  padding: 0 var(--tags-padding); 
+  padding: 0 var(--tags-padding);
 }
 
 .tag-question {
   margin: 0;
   margin-bottom: 4px;
-  
-font-family: Lato;
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-line-height: 24px;
-letter-spacing: 0.02em;
-text-align: left;
 
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-align: left;
 }
 .tag-button {
   margin-bottom: 24px;
-  width: 100%;  
+  width: 100%;
   background: none;
   padding: 8px 10px;
   border: 1px solid #3D3D3D;
   border-radius: 6px;
   display: block;
-  
-  
-font-family: Lato;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 24px;
-letter-spacing: 0.02em;
-text-align: left;
 
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.call-to-action {
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: -0.01em;
+  text-align: left;
+  margin: 16px var(--tags-padding);
 }
 
 .list-complete-item {
