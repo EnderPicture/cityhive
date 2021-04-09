@@ -83,7 +83,6 @@ h3 {
   max-width: var(--mid-width);
 }
 
-
 #app {
   width: 100vw;
   height: 100vh;
@@ -189,38 +188,53 @@ h3 {
   border: none;
   display: block;
   width: 100%;
+  background: none;
+  display: flex;
+  align-items: center;
+  
 }
 .tag p {
   font-family: Lato;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 24px;
-letter-spacing: 0.02em;
-text-align: left;
-
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  margin: 0;
 }
-.tag_selected {
-  background-color: #00E6A2;
+.check {
+  position: relative;
+  margin-right: 8px;
 }
-
-
+.check__unchecked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity .2s ease;
+}
+.check__checked {
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+.tag_selected .check__unchecked{
+  opacity: 0;
+}
+.tag_selected .check__checked{
+  opacity: 1;
+}
 
 .tag-headers {
-
-font-family: Lato;
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-line-height: 24px;
-letter-spacing: 0.02em;
-text-align: left;
-margin: 0 var(--tags-padding);
-
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  margin: 0 var(--tags-padding);
 }
-
-
-
 
 .list-complete-item {
   transition: all 0.8s ease;
