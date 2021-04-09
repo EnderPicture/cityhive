@@ -114,8 +114,8 @@ const App = {
           CMP4kA7FN1B: true
         };
 
-        if (events[post.node.id]) {
-          hashtags.push("event");
+        if (events[post.node.shortcode]) {
+          hashtags.push("events");
         }
 
         if (hashtags.indexOf("envirolab") > -1) {
