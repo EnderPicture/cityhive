@@ -9,9 +9,95 @@ const App = {
     return {
       instagramRawData: [],
       selected: {},
-      tags: [
-        "YouthLed",
-        "ZeroWaste",
+      tagsGroups: [
+        {
+          name: "Type",
+          tags: [
+          ]
+        },
+        {
+          name: "Program Catagory",
+          tags: [
+"Envirolab",
+            
+          ]
+        },
+        {
+          name: "Tipics",
+          tags: [
+"ZeroWaste",
+"CivicEducation",
+"CircularEconomy",
+"CityPlanning",
+"ClimateAction",
+"ClimateEmergency",
+          ]
+        },
+        {
+          name: "Skills",
+          tags: [
+          ]
+        },
+        {
+          name: "Duration",
+          tags: [
+          ]
+        },
+        {
+          name: "Location",
+          tags: [
+"RichmondBC",
+"MetroVancouver",
+"YVR",
+"NorthShore",
+          ]
+        },
+        YouthLed
+"NowHiring",
+"Jobs",
+"YVRJobs",
+"JobLove",
+"StopAsianHate",
+"vancouver",
+"planningvancouvertogether",
+"shapeyourcity",
+"broadwayplan",
+"langaracollege",
+"citystudiovan",
+"cityofvancouver",
+"Richmond",
+"InnovationLab",
+"VirtualProgram",
+"CommunityBuilding",
+"sustainability",
+"culturalsharing",
+"Municipal",
+"LocalGovernment",
+"Leadership",
+"VancouverPlan",
+"CityOfVancouver",
+"YouthEngagement",
+"EquityCenteredDesign",
+"FutureLabs",
+"Inclusion",
+"EnvirolabPresents",
+"Climate",
+"FamilyDay",
+"LunarNewYear",
+"Community",
+"circulareconomy",
+"DistantNotDisengaged",
+"InfiltrationManual",
+"LocalClimateAction",
+"PolicyInfiltration",
+"BlackHistoryMonth",
+"BlackLeaders",
+"BlackYouth",
+"NextGeneration",
+"YoungLeaders",
+"Sustainability",
+"Bernauguration",
+"RenewDemocracy",
       ],
     };
   },
