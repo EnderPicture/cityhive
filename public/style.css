@@ -438,6 +438,10 @@ hr {
   color: #5B5B5B;
 }
 
+.contact-us-placeholder {
+  width: 100%;
+}
+
 .list-complete-item {
   transition: all 0.8s ease;
 }
