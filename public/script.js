@@ -8,7 +8,11 @@ const App = {
   data() {
     return {
       instagramRawData: [],
-      selected: {}
+      selected: {},
+      tags: [
+        "YouthLed",
+        "ZeroWaste",
+      ],
     };
   },
   computed: {
