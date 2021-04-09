@@ -25,19 +25,19 @@ const App = {
         {
           name: "Tipics",
           tags: [
-            "youthlead",
-            "zerowaste",
-            "circulareconomy",
-            "civiceducation",
-            "sustainability",
-            "cityplanning",
-            "climateaction",
-            "climateemergency",
-            "citiesforall",
-            "communitybuilding",
-            "culturalsharing",
-            "localgovernment",
-            "localclimateaction"
+            "Youth Led",
+            "Zero Waste",
+            "Circular Economy",
+            "Civic Education",
+            "Sustainability",
+            "City Planning",
+            "Climate Action",
+            "Climate Emergency",
+            "Cities For All",
+            "Community Building",
+            "Cultural Sharing",
+            "Local Government",
+            "Local Climate Action"
           ]
         },
         {
@@ -51,15 +51,15 @@ const App = {
         {
           name: "Location",
           tags: [
-            "cityofvancouver",
-            "richmondbc",
-            "metrovancouver",
-            "yvr",
-            "northshore",
-            "vancouver",
-            "richmond"
+            "City of Vancouver",
+            "Richmondbc",
+            "Metro Vancouver",
+            "YVR",
+            "North Shore",
+            "Vancouver",
+            "Richmond"
           ]
-        },
+        }
       ]
     };
   },
@@ -68,7 +68,6 @@ const App = {
       return this.instagramRawData.map(post => {
         const caption = post.node.edge_media_to_caption.edges[0].node.text;
         let hashtags = caption.match(/#\w+/g);
-        
 
         let title =
           hashtags === null
@@ -83,7 +82,10 @@ const App = {
           img: post.node.display_url,
           thumbnail: post.node.thumbnail_src,
           caption: caption,
-          hashtags: hashtags === null ? [] : hashtags.map(tag => tag.substring(1).toLowerCase()),
+          hashtags:
+            hashtags === null
+              ? []
+              : hashtags.map(tag => tag.substring(1).toLowerCase()),
           title: title,
           id: post.node.id,
           shortcode: post.node.shortcode
@@ -99,15 +101,13 @@ const App = {
       return this.instagramData.filter(post => {
         let selected = false;
         for (let tag in this.selected) {
-          if (post.hashtags.indexOf(tag) > -1) {
+          if (post.hashtags.indexOf(tag.replace(' ', '').toLowerCase()) > -1) {
             selected = true;
             break;
           }
         }
         return selected;
       });
-      
-      
     },
     hashtags() {
       let tags = {};
