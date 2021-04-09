@@ -16,7 +16,16 @@
   </head>
   <body>
     <div id="app">
-      <nav class="nav"></nav>
+      <nav class="nav">
+        <div class="nav__innner-con">
+          <img
+            class="logo"
+            src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FCityHive.svg?v=1617948005974"
+          />
+          <div class="spacer"></div>
+          <a v-for="link in navLinks">{{link.name}}</a>
+        </div>
+      </nav>
       <div class="left">
         <div class="left__con">
           <div>
@@ -65,7 +74,8 @@
             >
               <button>
                 <span>{{group.name}}</span>
-                <img :class="{selected: group.open}"
+                <img
+                  :class="{selected: group.open}"
                   src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FVector.svg?v=1617946272700"
                 />
               </button>
@@ -102,7 +112,10 @@
         </div>
       </div>
       <div class="right">
-        <img class="background" src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FVector%20537.svg?v=1617947325315" />
+        <img
+          class="background"
+          src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FVector%20537.svg?v=1617947325315"
+        />
         <div class="right__con">
           <div class="title__con">
             <h1 class="title">What’s new</h1>

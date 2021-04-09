@@ -60,6 +60,14 @@ const App = {
             "Richmond"
           ]
         }
+      ],
+      navLinks: [
+        { name: "HOME", url: "" },
+        { name: "ABOUT", url: "" },
+        { name: "PROGRAMS", url: "" },
+        { name: "WORK WITH US", url: "" },
+        { name: "WHAT’S NEW", url: "" },
+        { name: "CONTACT US", url: "" }
       ]
     };
   },
@@ -101,7 +109,9 @@ const App = {
       return this.instagramData.filter(post => {
         let selected = false;
         for (let tag in this.selected) {
-          if (post.hashtags.indexOf(tag.replaceAll(' ', '').toLowerCase()) > -1) {
+          if (
+            post.hashtags.indexOf(tag.replaceAll(" ", "").toLowerCase()) > -1
+          ) {
             selected = true;
             break;
           }
