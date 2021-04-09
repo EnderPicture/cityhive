@@ -164,7 +164,7 @@ hr {
   grid-auto-rows: 390px;
   margin: auto;
   max-width: var(--mid-width);
-  gap: 20px;
+  gap: 24px 20px;
   position: relative;
 }
 
@@ -221,7 +221,7 @@ hr {
 
   margin: 16px;
 
-  color: var(--color-purple-200);
+  color: var(--color-green-400);
 }
 
 .tags {
