@@ -41,6 +41,8 @@ body {
   line-height: 1.5em;
   display: flex;
   overflow: hidden;
+  
+  color: #292929;
 }
 
 h1,
@@ -317,6 +319,8 @@ hr {
   line-height: 21px;
   letter-spacing: 0.02em;
   text-align: left;
+  
+  color: #8E8E8E;
 }
 .filters-reset {
   padding: 0;
@@ -351,6 +355,8 @@ hr {
   line-height: 24px;
   letter-spacing: 0.02em;
   text-align: left;
+  
+  color: #5B5B5B;
 }
 
 .filters-select-con {
@@ -385,6 +391,8 @@ hr {
   line-height: 24px;
   letter-spacing: 0.02em;
   text-align: left;
+  
+  color: #3D3D3D;
 }
 
 .call-to-action {
@@ -396,6 +404,8 @@ hr {
   letter-spacing: -0.01em;
   text-align: left;
   margin: 16px var(--tags-padding);
+  
+  color: #5B5B5B;
 }
 
 .list-complete-item {
