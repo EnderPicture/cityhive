@@ -6,6 +6,7 @@
 
 :root {
   --mid-width: 856px;
+  --tags-padding: 40px;
 
   --color-green-100: #C2FFED;
   --color-blue-100: #C2E5FF;
@@ -179,25 +180,47 @@ h3 {
 }
 
 .tags {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 40px;
+  margin: 0 var(--tags-padding);
 }
 
 .tag {
   /*   flex: 1; */
-  white-space: nowrap;
-  padding: 2px 5px;
-  background-color: #00B881;
-  border-radius: 5px;
-  margin: 2px;
   font-size: 1rem;
-  color: #fff;
   border: none;
+  display: block;
+  width: 100%;
+}
+.tag p {
+  font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0.02em;
+text-align: left;
+
 }
 .tag_selected {
   background-color: #00E6A2;
 }
+
+
+
+.tag-headers {
+
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px;
+letter-spacing: 0.02em;
+text-align: left;
+margin: 0 var(--tags-padding);
+
+}
+
+
+
 
 .list-complete-item {
   transition: all 0.8s ease;

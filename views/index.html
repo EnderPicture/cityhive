@@ -19,7 +19,7 @@
       <div class="left">
         <div class="left__con">
           <section v-for="group in tagGroups">
-            <h3>
+            <h3 class="tag-headers">
               {{group.name}}
             </h3>
 
@@ -29,21 +29,22 @@
                 v-for="tag in group.tags"
                 @click="tagClicked(tag)"
               >
-                {{tag}}
+                <div class="check">
+                  
+                </div>
+                <p>{{tag}}</p>
+                
               </button>
-              
-              
- 
             </div>
           </section>
-                       <!--    old hashtags          -->
-                          <button
+          <!--    old hashtags          -->
+          <!--     <button
               :class="{'tag':true, 'tag_selected':selected[tag.name]===true}"
               v-for="tag in hashtags"
               @click="tagClicked(tag.name)"
             >
               {{tag.name}} - {{tag.count}}
-            </button>
+            </button> -->
         </div>
       </div>
       <div class="right">
