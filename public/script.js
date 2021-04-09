@@ -16,11 +16,11 @@ const App = {
       tagGroups: [
         {
           name: "Type",
-          tags: ["jobs"]
+          tags: ["Jobs"]
         },
         {
           name: "Program",
-          tags: ["envirolab", "innovationlab", "virtualprogram"]
+          tags: ["Envirolab", "Innovation Lab"]
         },
         {
           name: "Tipics",
@@ -101,7 +101,7 @@ const App = {
       return this.instagramData.filter(post => {
         let selected = false;
         for (let tag in this.selected) {
-          if (post.hashtags.indexOf(tag.replace(' ', '').toLowerCase()) > -1) {
+          if (post.hashtags.indexOf(tag.replaceAll(' ', '').toLowerCase()) > -1) {
             selected = true;
             break;
           }

@@ -16,6 +16,7 @@
   </head>
   <body>
     <div id="app">
+      <nav class="nav"></nav>
       <div class="left">
         <div class="left__con">
           <section v-for="group in tagGroups">
@@ -50,7 +51,7 @@
       </div>
       <div class="right">
         <div class="right__con">
-          <div class="title__con">
+          <div class="title__con" v-if="se">
             <h1 class="title">What’s new</h1>
             <p class="title__message">
               Don’t miss a thing - Check out our program updates, blog, new
