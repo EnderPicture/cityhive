@@ -25,6 +25,7 @@ const App = {
         {
           name: "Tipics",
           tags: [
+            "youthlead",
             "zerowaste",
             "circulareconomy",
             "civiceducation",
