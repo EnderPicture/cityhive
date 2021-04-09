@@ -31,37 +31,43 @@
       </div>
       <div class="right">
         <div class="right__con">
-          
           <div class="title__con">
-          <h1 class="title">What’s new</h1>
-          <p class="title__message">
-            Don’t miss a thing - Check out our program updates, blog, new opportunities, and open applications below.
-          </p>  
+            <h1 class="title">What’s new</h1>
+            <p class="title__message">
+              Don’t miss a thing - Check out our program updates, blog, new
+              opportunities, and open applications below.
+            </p>
           </div>
-          
-          
-          <transition-group tag="div" name="list-complete" class="posts">
-            <a
-              class="post list-complete-item"
-              v-for="post in instagramDataFiltered"
-              :ref="post.id"
-              :key="post.id"
-              :href="'https://www.instagram.com/p/'+post.shortcode+'/'"
-              target="_blank"
-            >
-              <div>
-                <img :src="post.thumbnail" alt="" loading="lazy" />  
-              </div>
-              <h2>
-                {{post.title}}
-              </h2>
-              <p>
-                {{post.caption}}
-                <span class="gradient"></span>
-              </p>
-              <p class="learn">Learn more</p>
-            </a>
-          </transition-group>
+
+          <section class="section">
+            
+            <h2 class="section-titles">
+              Programs
+            </h2>
+            
+            <transition-group tag="div" name="list-complete" class="posts">
+              <a
+                class="post list-complete-item"
+                v-for="post in instagramDataFiltered"
+                :ref="post.id"
+                :key="post.id"
+                :href="'https://www.instagram.com/p/'+post.shortcode+'/'"
+                target="_blank"
+              >
+                <div>
+                  <img :src="post.thumbnail" alt="" loading="lazy" />
+                </div>
+                <h3>
+                  {{post.title}}
+                </h3>
+                <p>
+                  {{post.caption}}
+                  <span class="gradient"></span>
+                </p>
+                <p class="learn">Learn more</p>
+              </a>
+            </transition-group>
+          </section>
         </div>
       </div>
     </div>

@@ -70,6 +70,18 @@ h3 {
   margin: 0;
 }
 
+.section-titles {
+  font-family: Raleway;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  margin: 0 auto 24px auto;
+  max-width: var(--mid-width);
+}
+
 #app {
   width: 100vw;
   height: 100vh;
