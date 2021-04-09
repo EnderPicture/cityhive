@@ -228,6 +228,14 @@ hr {
   margin: 0 var(--tags-padding);
 }
 
+.tag-delete__con {
+  display: flex;
+  margin-bottom: 16px;
+}
+.tag-delete {
+  
+}
+
 .tag {
   /*   flex: 1; */
   font-size: 1rem;
@@ -306,7 +314,7 @@ hr {
 
 .filters-top {
   display: flex;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 .filters-lable {
   margin: 0;

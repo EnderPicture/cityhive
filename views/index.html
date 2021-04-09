@@ -45,6 +45,12 @@
                 Reset
               </button>
             </div>
+            
+            <div class="tag-delete__con" v-if="Object.keys(selected).length > 0">
+              <button class="tag-delete" v-for="(selectedTag, index) in selected" @click="delete selected[index]">
+                {{index}}
+              </button>
+            </div>
 
             <p class="tag-question">
               Are you currently in
