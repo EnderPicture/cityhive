@@ -164,6 +164,11 @@ const App = {
       } else {
         this.selected[tag] = true;
       }
+    },
+    reset() {
+      for (let key in this.selected) {
+        delete this.selected[key];
+      }
     }
   },
   created() {

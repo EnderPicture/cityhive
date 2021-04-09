@@ -45,7 +45,8 @@ h3 {
 }
 
 hr {
-  border: solid 0.75px #DBDBDB;
+  border: none;
+  border-top: solid 0.75px #DBDBDB;
 }
 
 .nav {
