@@ -28,29 +28,32 @@
           
           <hr>
           
-          
-          <div class="filters-top">
-            <p class="filters-lable">
-              FILTERS
+          <div class="filters-select-con">
+            <div class="filters-top">
+              <p class="filters-lable">
+                FILTERS
+              </p>
+              <button class="filters-reset" @click="selected.length = 0">
+                Reset
+              </button>
+            </div>
+
+            <p class="tag-question">
+              Are you currently in
             </p>
-            <button class="filters-reset">
-              Reset
+            <button class="tag-button">
+              Select one option
             </button>
+
+            <p class="tag-question">
+              What’s your availability? 
+            </p>
+            <button class="tag-button">
+              Select one option
+            </button>  
           </div>
           
-          <p class="tag-question">
-            Are you currently in
-          </p>
-          <button class="tag-button">
-            Select one option
-          </button>
           
-          <p class="tag-question">
-            What’s your availability? 
-          </p>
-          <button class="tag-button">
-            Select one option
-          </button>
           
           <hr>
           

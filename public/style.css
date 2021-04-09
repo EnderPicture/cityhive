@@ -255,7 +255,7 @@ hr {
 
 .filters-top {
   display: flex;
-  margin: 0 var(--tags-padding);
+  margin-bottom: 24px;
 }
 .filters-lable {
   margin: 0;
@@ -273,7 +273,6 @@ hr {
   padding: 0;
   border: none;
   background: none;
-  flex: 1;
   text-align: right;
 
   font-family: Lato;
@@ -286,6 +285,10 @@ hr {
   text-decoration-line: underline;
 
   color: var(--color-green-400);
+}
+.filters-reset:hover {
+  cursor: pointer;
+  opacity: .5;
 }
 
 .interest-question {
@@ -302,8 +305,14 @@ hr {
 
 }
 
+.filters-select-con {
+  padding: 0 var(--tags-padding); 
+}
+
 .tag-question {
-  margin: 0 var(--tags-padding);
+  margin: 0;
+  margin-bottom: 4px;
+  
 font-family: Lato;
 font-size: 16px;
 font-style: normal;
@@ -314,12 +323,13 @@ text-align: left;
 
 }
 .tag-button {
-  margin: 0 var(--tags-padding);
-  
-  border: none;
+  margin-bottom: 24px;
+  width: 100%;  
   background: none;
-  padding: 8;
+  padding: 8px 10px;
   border: 1px solid #3D3D3D;
+  border-radius: 6px;
+  display: block;
   
   
 font-family: Lato;
