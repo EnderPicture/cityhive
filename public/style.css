@@ -44,6 +44,10 @@ h3 {
   font-family: "Raleway", sans-serif;
 }
 
+hr {
+  border: solid 0.75px #DBDBDB;
+}
+
 .nav {
   grid-area: nav;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 6px 16px rgba(0, 0, 0, 0.02);
@@ -251,6 +255,7 @@ h3 {
 
 .filters-top {
   display: flex;
+  margin: 0 var(--tags-padding);
 }
 .filters-lable {
   margin: 0;
@@ -281,6 +286,50 @@ h3 {
   text-decoration-line: underline;
 
   color: var(--color-green-400);
+}
+
+.interest-question {
+  margin: 0 0 0 var(--tags-padding);
+  margin-top: 15px;
+  
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-align: left;
+
+}
+
+.tag-question {
+  margin: 0 var(--tags-padding);
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px;
+letter-spacing: 0.02em;
+text-align: left;
+
+}
+.tag-button {
+  margin: 0 var(--tags-padding);
+  
+  border: none;
+  background: none;
+  padding: 8;
+  border: 1px solid #3D3D3D;
+  
+  
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0.02em;
+text-align: left;
+
 }
 
 .list-complete-item {
