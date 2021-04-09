@@ -16,11 +16,11 @@ const App = {
       tagGroups: [
         {
           name: "Type",
-          tags: ["Jobs"]
+          tags: ["Events", "Jobs"]
         },
         {
           name: "Program",
-          tags: ["Envirolab", "Innovation Lab", "Civic Education"]
+          tags: ["Innovation Lab", "Civic Education"]
         },
         {
           name: "Topics",
@@ -84,15 +84,20 @@ const App = {
                 .replace(/([A-Z])/g, " $1")
                 .trim();
         title = toTitleCase(title);
+        
+        hashtags = hashtags === null
+              ? []
+              : hashtags.map(tag => tag.substring(1).toLowerCase());
+        
+        if (hashtags.indexOf('envirolab') > -1) {
+          hashtags.push('innovationlab');
+        }
 
         return {
           img: post.node.display_url,
           thumbnail: post.node.thumbnail_src,
           caption: caption,
-          hashtags:
-            hashtags === null
-              ? []
-              : hashtags.map(tag => tag.substring(1).toLowerCase()),
+          hashtags: hashtags,
           title: title,
           id: post.node.id,
           shortcode: post.node.shortcode
