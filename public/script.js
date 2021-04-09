@@ -1,7 +1,11 @@
 function toTitleCase(str) {
-  return str.toLowerCase().split(' ').map(function (word) {
-    return (word.charAt(0).toUpperCase() + word.slice(1));
-  }).join(' ');
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map(function(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
 }
 
 const App = {
@@ -12,93 +16,50 @@ const App = {
       tagsGroups: [
         {
           name: "Type",
-          tags: [
-          ]
+          tags: ["job"]
         },
         {
-          name: "Program Catagory",
-          tags: [
-"Envirolab",
-            
-          ]
+          name: "Program",
+          tags: ["envirolab", "innovationlab", "virtualprogram"]
         },
         {
           name: "Tipics",
           tags: [
-"ZeroWaste",
-"CivicEducation",
-"CircularEconomy",
-"CityPlanning",
-"ClimateAction",
-"ClimateEmergency",
+            "zerowaste",
+            "circulareconomy",
+            "civiceducation",
+            "sustainability",
+            "cityplanning",
+            "climateaction",
+            "climateemergency",
+            "citiesforall",
+            "communitybuilding",
+            "culturalsharing",
+            "localgovernment",
+            "localclimateaction"
           ]
         },
         {
           name: "Skills",
-          tags: [
-          ]
+          tags: []
         },
         {
           name: "Duration",
-          tags: [
-          ]
+          tags: []
         },
         {
           name: "Location",
           tags: [
-"RichmondBC",
-"MetroVancouver",
-"YVR",
-"NorthShore",
+            "cityofvancouver",
+            "richmondbc",
+            "metrovancouver",
+            "yvr",
+            "northshore",
+            "vancouver",
+            "richmond"
           ]
         },
-        YouthLed
-"NowHiring",
-"Jobs",
-"YVRJobs",
-"JobLove",
-"StopAsianHate",
-"vancouver",
-"planningvancouvertogether",
-"shapeyourcity",
-"broadwayplan",
-"langaracollege",
-"citystudiovan",
-"cityofvancouver",
-"Richmond",
-"InnovationLab",
-"VirtualProgram",
-"CommunityBuilding",
-"sustainability",
-"culturalsharing",
-"Municipal",
-"LocalGovernment",
-"Leadership",
-"VancouverPlan",
-"CityOfVancouver",
-"YouthEngagement",
-"EquityCenteredDesign",
-"FutureLabs",
-"Inclusion",
-"EnvirolabPresents",
-"Climate",
-"FamilyDay",
-"LunarNewYear",
-"Community",
-"circulareconomy",
-"DistantNotDisengaged",
-"InfiltrationManual",
-"LocalClimateAction",
-"PolicyInfiltration",
-"BlackHistoryMonth",
-"BlackLeaders",
-"BlackYouth",
-"NextGeneration",
-"YoungLeaders",
-"Sustainability",
-"Bernauguration",
-"RenewDemocracy",
-      ],
+      ]
     };
   },
   computed: {
@@ -106,15 +67,16 @@ const App = {
       return this.instagramRawData.map(post => {
         const caption = post.node.edge_media_to_caption.edges[0].node.text;
         const hashtags = caption.match(/#\w+/g);
-        
-        let title = hashtags === null
-              ? 'CithHive'
-              : hashtags[0]
-                  .substring(1)
-                  .replace(/([A-Z])/g, " $1")
-                  .trim();
+
+        let title =
+          hashtags === null
+            ? "CithHive"
+            : hashtags[0]
+                .substring(1)
+                .replace(/([A-Z])/g, " $1")
+                .trim();
         title = toTitleCase(title);
-        
+
         return {
           img: post.node.display_url,
           thumbnail: post.node.thumbnail_src,
@@ -148,10 +110,11 @@ const App = {
       this.instagramData.forEach(post => {
         if (post.hashtags !== null) {
           post.hashtags.forEach(hashTag => {
-            if (tags[hashTag] === undefined) {
-              tags[hashTag] = 0;
+            let low = hashTag.toLowerCase();
+            if (tags[low] === undefined) {
+              tags[low] = 0;
             }
-            tags[hashTag]++;
+            tags[low]++;
           });
         }
       });
