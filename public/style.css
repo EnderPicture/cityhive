@@ -163,6 +163,7 @@ hr {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 390px;
   margin: auto;
+  margin-bottom: 44px;
   max-width: var(--mid-width);
   gap: 24px 20px;
   position: relative;

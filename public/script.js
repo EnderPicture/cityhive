@@ -20,15 +20,14 @@ const App = {
         },
         {
           name: "Program",
-          tags: ["Envirolab", "Innovation Lab"]
+          tags: ["Envirolab", "Innovation Lab", "Civic Education"]
         },
         {
-          name: "Tipics",
+          name: "Topics",
           tags: [
             "Youth Led",
             "Zero Waste",
             "Circular Economy",
-            "Civic Education",
             "Sustainability",
             "City Planning",
             "Climate Action",
