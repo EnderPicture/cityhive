@@ -18,11 +18,12 @@
     <div id="app">
       <div class="left">
         <div class="left__con">
-          <div class="tags">
-            <section v-for="group in tagGroups">
-              <h3>
-                {{group.name}}
-              </h3>
+          <section v-for="group in tagGroups">
+            <h3>
+              {{group.name}}
+            </h3>
+
+            <div class="tags">
               <button
                 :class="{'tag':true, 'tag_selected':selected[tag]===true}"
                 v-for="tag in group.tags"
@@ -30,17 +31,19 @@
               >
                 {{tag}}
               </button>
-            </section>
-
-            <!--    old hashtags          -->
-            <!--             <button
+              
+              
+ 
+            </div>
+          </section>
+                       <!--    old hashtags          -->
+                          <button
               :class="{'tag':true, 'tag_selected':selected[tag.name]===true}"
               v-for="tag in hashtags"
               @click="tagClicked(tag.name)"
             >
               {{tag.name}} - {{tag.count}}
-            </button> -->
-          </div>
+            </button>
         </div>
       </div>
       <div class="right">
