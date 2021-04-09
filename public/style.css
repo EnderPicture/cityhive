@@ -242,6 +242,18 @@ hr {
 }
 
 .tag-headers {
+  margin: 0 var(--tags-padding);
+  
+  
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+.tag-headers button {
+  border: none;
+  background: none;
+  padding: 0;
+  width: 100%;
+  display: flex;
   font-family: Lato;
   font-size: 16px;
   font-style: normal;
@@ -249,9 +261,13 @@ hr {
   line-height: 24px;
   letter-spacing: 0.02em;
   text-align: left;
-  margin: 0 var(--tags-padding);
-  margin-bottom: 16px;
-  margin-top: 24px;
+  align-items: center;
+}
+.tag-headers span {
+  flex: 1;
+}
+.tag-header img.selected {
+  transform: rotation(90deg);
 }
 
 .filters-top {

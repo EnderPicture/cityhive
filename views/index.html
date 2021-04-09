@@ -19,15 +19,14 @@
       <nav class="nav"></nav>
       <div class="left">
         <div class="left__con">
-          
           <div>
             <p>
               Discover what’s right for you!
             </p>
           </div>
-          
-          <hr>
-          
+
+          <hr />
+
           <div class="filters-select-con">
             <div class="filters-top">
               <p class="filters-lable">
@@ -46,38 +45,49 @@
             </button>
 
             <p class="tag-question">
-              What’s your availability? 
+              What’s your availability?
             </p>
             <button class="tag-button">
               Select one option
-            </button>  
+            </button>
           </div>
-          
-          
-          
-          <hr>
-          
+
+          <hr />
+
           <p class="interest-question">
             Select the options you’re interested in.
           </p>
-          
+
           <section v-for="group in tagGroups">
-            <h3 class="tag-headers">
-              {{group.name}}
+            <h3
+              class="tag-headers"
+              @click="group.open = group.open === undefined ? true : !group.open"
+            >
+              <button>
+                <span>{{group.name}}</span>
+                <img :class="{selected: group.open}"
+                  src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FVector.svg?v=1617946272700"
+                />
+              </button>
             </h3>
 
-            <div class="tags">
+            <div class="tags" v-show="group.open">
               <button
                 :class="{'tag':true, 'tag_selected':selected[tag]===true}"
                 v-for="tag in group.tags"
                 @click="tagClicked(tag)"
               >
                 <div class="check">
-                  <img class="check__unchecked" src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FRectangle%20387.svg?v=1617936790586" />
-                  <img class="check__checked" src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FGroup%20305.svg?v=1617936793776" />
+                  <img
+                    class="check__unchecked"
+                    src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FRectangle%20387.svg?v=1617936790586"
+                  />
+                  <img
+                    class="check__checked"
+                    src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FGroup%20305.svg?v=1617936793776"
+                  />
                 </div>
                 <p>{{tag}}</p>
-                
               </button>
             </div>
           </section>
