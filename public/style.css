@@ -58,8 +58,9 @@ hr {
   grid-area: nav;
   background-color: white;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 6px 16px rgba(0, 0, 0, 0.02);
+  z-index: 100;
 }
-.nav__innner-con {
+.nav__inner-con {
   height: 100%;
   max-width: 1065px;
   margin: auto;
@@ -74,6 +75,7 @@ hr {
   line-height: 21px;
   letter-spacing: 0.02em;
   text-align: center;
+  margin-left: 55px;
 }
 .spacer {
   flex: 1;

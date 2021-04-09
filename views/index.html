@@ -17,7 +17,7 @@
   <body>
     <div id="app">
       <nav class="nav">
-        <div class="nav__innner-con">
+        <div class="nav__inner-con">
           <img
             class="logo"
             src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FCityHive.svg?v=1617948005974"
@@ -126,7 +126,10 @@
           </div>
 
           <section class="section">
-            <h2 class="section-titles">
+            <h2 class="section-titles" v-if="Object.keys(selected).length > 0">
+              Our recommendation
+            </h2>
+            <h2 class="section-titles" v-else>
               Events
             </h2>
 
