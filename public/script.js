@@ -234,6 +234,7 @@ const App = {
     },
     dropDownText(index) {
       let selected = this.radioGroups[index].tags.filter(tag => this.selected[tag] !== undefined)[0];
+      return selected === undefined ? 'select something' : selected;
     }
   },
   created() {
