@@ -412,8 +412,13 @@ hr {
   padding: 8px 10px;
   border: 1px solid #3D3D3D;
   border-radius: 6px;
-  display: block;
+  display: flex;
+  align-items: center;
 
+  color: #3D3D3D;
+}
+.tag-button p {
+  flex: 1;
   font-family: Lato;
   font-size: 16px;
   font-style: normal;
@@ -421,8 +426,7 @@ hr {
   line-height: 24px;
   letter-spacing: 0.02em;
   text-align: left;
-
-  color: #3D3D3D;
+  margin: 0;
 }
 .drop-down__placement {
   position: relative;
@@ -436,7 +440,7 @@ hr {
   z-index: 10;
   border: 1px solid #3D3D3D;
   border-radius: 0 0 6px 6px;
-  overflow: hidden;
+/*   overflow: hidden; */
   border-top: none;
   padding-top: 6px;
   transform: translateY(-6px);

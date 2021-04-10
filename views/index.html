@@ -74,13 +74,15 @@
               </p>
               <div class="drop-down__placement">
                 <button class="tag-button" @click="dropDownClicked(index)">
-                  {{dropDownText(index)}}
+                  <p>
+                    {{dropDownText(index)}}
+                  </p> 
                   <img
                   :class="{'arrow':true, 'arrow_rotated': raioGroup.open}"
                   src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FVector.svg?v=1617946272700"
                 />
                 </button>
-                <div class="drop-down" v-if="raioGroup.open">
+                <div class="drop-down" v-if="raioGroup.open" @click ="raioGroup.open = false">
                   <button v-for="tag in raioGroup.tags" @click="radioClicked(raioGroup, tag)">
                     {{tag}}
                   </button>
