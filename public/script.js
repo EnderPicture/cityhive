@@ -71,6 +71,9 @@ const App = {
     };
   },
   computed: {
+    selectedEmpty() {
+      return Object.keys(this.selected).length > 0;
+    },
     instagramData() {
       return this.instagramRawData.map(post => {
         const caption = post.node.edge_media_to_caption.edges[0].node.text;
