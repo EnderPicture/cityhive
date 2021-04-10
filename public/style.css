@@ -423,6 +423,20 @@ hr {
   text-align: left;
 
   color: #3D3D3D;
+  
+  position: relative;
+}
+.drop-down {
+  position:absolute;
+  top: 90%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+  border: 1px solid #3D3D3D;
+}
+.drop-down div {
+  padding: 8px 10px;
 }
 
 .call-to-action {

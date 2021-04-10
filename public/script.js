@@ -21,7 +21,15 @@ const App = {
             "undergraduate",
             "graduate",
           ]
-        }
+        },
+        {
+          question: "What’s your availability?",
+          tags: [
+            "alldays",
+            "weekdays",
+            "weekends",
+          ]
+        },
       ],
       tagGroups: [
         {

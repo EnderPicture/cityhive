@@ -53,20 +53,22 @@
               </button>
             </div>
 
-            <p class="tag-question">
-              Are you currently in
-            </p>
             
             
-            <button class="tag-button">
-              Select one option
-            </button>
+            <lable v-for="raioGroup in radioGroups">
             <p class="tag-question">
-              What’s your availability?
+              {{raioGroup.question}}
             </p>
             <button class="tag-button">
-              Select one option
-            </button>
+              hello
+              
+              <div class="drop-down">
+                <div v-for="tag in raioGroup.tags">
+                  {{tag}}
+                </div>
+              </div>
+            </button>  
+            </lable>
           </div>
 
           <hr />
