@@ -16,13 +16,13 @@ const App = {
       radioGroups: [
         {
           question: "Are you currently in",
-          prefill: "select satus",
+          prefill: "Any Satus",
           tags: ["Highschool", "Under Graduate", "Graduate"]
         },
         {
           question: "What’s your availability?",
-          prefill: "select availability",
-          tags: ["All Days", "Weekdays", "Weekends"]
+          prefill: "All Days",
+          tags: ["Weekdays", "Weekends"]
         }
       ],
       tagGroups: [
@@ -53,11 +53,21 @@ const App = {
         },
         {
           name: "Skills",
-          tags: []
+          tags: [
+            "Public speaking",
+            "Design thinking",
+            "Proposal writing",
+            "Leadership",
+            "Network",
+          ]
         },
         {
           name: "Duration",
-          tags: []
+          tags: [
+            "1 - 2 hours",
+            "2 - 4 hours",
+            "More than 4 hours",
+          ]
         },
         {
           name: "Location",
@@ -105,12 +115,30 @@ const App = {
             ? []
             : hashtags.map(tag => tag.substring(1).toLowerCase());
 
+//         fake tages adder
         if (Math.floor(Math.random() * 2) === 0) {
           hashtags.push("events");
         }
+        
+        if (Math.floor(Math.random() * 5) === 0) {
+          hashtags.push("weekends");
+        } else {
+          hashtags.push("weekdays");
+        }
+        
+        if (Math.floor(Math.random() * 2) === 0) {
+          hashtags.push("highschool");
+        } else if (Math.floor(Math.random() * 2) === 0) {
+          hashtags.push("undergraduate");
+        } else {
+          hashtags.push("graduate");
+        }
+  
+        
         if (hashtags.indexOf("envirolab") > -1) {
           hashtags.push("innovationlab");
         }
+        
 
         let postObj = {
           img: post.node.display_url,
