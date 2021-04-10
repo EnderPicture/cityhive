@@ -1,3 +1,6 @@
+const { createRouter, createWebHistory, createWebHashHistory } = VueRouter;
+const { createApp } = Vue;
+
 function toTitleCase(str) {
   return str
     .toLowerCase()
@@ -297,4 +300,10 @@ const App = {
   }
 };
 
-Vue.createApp(App).mount("#app");
+const router = createRouter({
+  history: createWebHistory(),
+  routes: []
+});
+
+const app = createApp(App).mount("#app");
+app.use(router);
