@@ -297,5 +297,4 @@ const App = {
   }
 };
 
-// Vue.use(VueRouter);
 Vue.createApp(App).mount("#app");
