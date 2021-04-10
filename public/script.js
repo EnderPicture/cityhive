@@ -58,16 +58,12 @@ const App = {
             "Design thinking",
             "Proposal writing",
             "Leadership",
-            "Network",
+            "Network"
           ]
         },
         {
           name: "Duration",
-          tags: [
-            "1 - 2 hours",
-            "2 - 4 hours",
-            "More than 4 hours",
-          ]
+          tags: ["1 - 2 hours", "2 - 4 hours", "More than 4 hours"]
         },
         {
           name: "Location",
@@ -115,17 +111,33 @@ const App = {
             ? []
             : hashtags.map(tag => tag.substring(1).toLowerCase());
 
-//         fake tages adder
+        //         fake tages adder
         if (Math.floor(Math.random() * 2) === 0) {
           hashtags.push("events");
         }
-        
+
+        if (Math.floor(Math.random() * 5) === 0) {
+          hashtags.push("publicspeaking");
+        }
+        if (Math.floor(Math.random() * 5) === 0) {
+          hashtags.push("designthinking");
+        }
+        if (Math.floor(Math.random() * 5) === 0) {
+          hashtags.push("proposalwriting");
+        }
+        if (Math.floor(Math.random() * 5) === 0) {
+          hashtags.push("leadership");
+        }
+        if (Math.floor(Math.random() * 5) === 0) {
+          hashtags.push("network");
+        }
+
         if (Math.floor(Math.random() * 5) === 0) {
           hashtags.push("weekends");
         } else {
           hashtags.push("weekdays");
         }
-        
+
         if (Math.floor(Math.random() * 2) === 0) {
           hashtags.push("highschool");
         } else if (Math.floor(Math.random() * 2) === 0) {
@@ -133,12 +145,18 @@ const App = {
         } else {
           hashtags.push("graduate");
         }
-  
-        
+
+        if (Math.floor(Math.random() * 2) === 0) {
+          hashtags.push("1-2hours");
+        } else if (Math.floor(Math.random() * 2) === 0) {
+          hashtags.push("2-4hours");
+        } else {
+          hashtags.push("morethan4hours");
+        }
+
         if (hashtags.indexOf("envirolab") > -1) {
           hashtags.push("innovationlab");
         }
-        
 
         let postObj = {
           img: post.node.display_url,
@@ -233,18 +251,18 @@ const App = {
       }
     },
     dropDownClicked(index) {
-//       clear all
-      
+      //       clear all
+
       if (this.radioGroups[index].open === undefined) {
         this.radioGroups[index].open = false;
       }
-      
+
       let currentStatus = this.radioGroups[index].open;
-      
+
       this.radioGroups.forEach(group => {
         group.open = false;
       });
-      
+
       this.radioGroups[index].open = !currentStatus;
     },
     radioClicked(raioGroup, tag) {
@@ -264,7 +282,9 @@ const App = {
     },
     dropDownText(index) {
       let group = this.radioGroups[index];
-      let selected = group.tags.filter(tag => this.selected[tag] !== undefined)[0];
+      let selected = group.tags.filter(
+        tag => this.selected[tag] !== undefined
+      )[0];
       return selected === undefined ? group.prefill : selected;
     }
   },
