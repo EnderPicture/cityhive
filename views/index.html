@@ -42,7 +42,7 @@
               <p class="filters-lable">
                 FILTERS
               </p>
-              <button class="filters-reset" @click="reset" v-if="selectedEmpty">
+              <button class="filters-reset" @click="reset" v-if="!selectedEmpty">
                 Reset
               </button>
             </div>
