@@ -252,7 +252,7 @@ hr {
   align-items: center;
   letter-spacing: 0.02em;
 
-  margin: 4px 2px;
+  margin: 0 4px 8px 0;
 }
 .tag-delete img {
   margin-left: 10px;

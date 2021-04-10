@@ -15,13 +15,13 @@ const App = {
       selected: {},
       radioGroups: [
         {
-          question: "Are you currently in",
-          prefill: "Any Satus",
+          question: "What’s your current education level?",
+          prefill: "Select one option",
           tags: ["Highschool", "Under Graduate", "Graduate"]
         },
         {
           question: "What’s your availability?",
-          prefill: "All Days",
+          prefill: "Select one option",
           tags: ["Weekdays", "Weekends"]
         }
       ],
