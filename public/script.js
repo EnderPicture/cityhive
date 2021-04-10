@@ -16,11 +16,13 @@ const App = {
       radioGroups: [
         {
           question: "Are you currently in",
-          tags: ["highschool", "undergraduate", "graduate"]
+          prefill: "select satus",
+          tags: ["Highschool", "Under Graduate", "Graduate"]
         },
         {
           question: "What’s your availability?",
-          tags: ["alldays", "weekdays", "weekends"]
+          prefill: "select availability",
+          tags: ["All Days", "Weekdays", "Weekends"]
         }
       ],
       tagGroups: [
@@ -233,8 +235,9 @@ const App = {
       }
     },
     dropDownText(index) {
-      let selected = this.radioGroups[index].tags.filter(tag => this.selected[tag] !== undefined)[0];
-      return selected === undefined ? 'select something' : selected;
+      let group = this.radioGroups[index];
+      let selected = group.tags.filter(tag => this.selected[tag] !== undefined)[0];
+      return selected === undefined ? group.prefill : selected;
     }
   },
   created() {

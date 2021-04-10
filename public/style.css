@@ -327,10 +327,10 @@ hr {
 .tag-headers span {
   flex: 1;
 }
-.tag-headers img {
+.arrow {
   transition: 0.2s ease;
 }
-.tag-headers img.selected {
+.arrow_rotated {
   transform: rotate(90deg);
 }
 
@@ -438,7 +438,8 @@ hr {
   border-radius: 0 0 6px 6px;
   overflow: hidden;
   border-top: none;
-  transform: translateY(6px);
+  padding-top: 6px;
+  transform: translateY(-6px);
 /*   box-shadow: 0px -6px 0px red; */
 }
 .drop-down button {
