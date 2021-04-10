@@ -202,8 +202,20 @@ const App = {
         delete this.selected[key];
       }
     },
-    dropDownClicked() {
+    dropDownClicked(index) {
+//       clear all
       
+      if (this.radioGroups[index].open === undefined) {
+        this.radioGroups[index].open = false;
+      }
+      
+      let currentStatus = this.radioGroups[index].open;
+      
+      this.radioGroups.forEach(group => {
+        group.open = false;
+      });
+      
+      this.radioGroups[index].open = !currentStatus;
     },
     radioClicked(raioGroup, tag) {
       raioGroup.open = false;
@@ -219,6 +231,9 @@ const App = {
       } else {
         this.selected[tag] = true;
       }
+    },
+    dropDownText(index) {
+      let selected = this.radioGroups[index].tags.filter(tag => this.selected[tag] !== undefined)[0];
     }
   },
   created() {

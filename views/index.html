@@ -68,13 +68,13 @@
               </button>
             </div>
 
-            <div v-for="raioGroup in radioGroups">
+            <div v-for="(raioGroup, index) in radioGroups">
               <p class="tag-question">
                 {{raioGroup.question}}
               </p>
               <div class="drop-down__placement">
-                <button class="tag-button" @click="raioGroup.open = raioGroup.open === undefined ? true : !raioGroup.open">
-                  hello
+                <button class="tag-button" @click="dropDownClicked(index)">
+                  {{dropDownText(index)}}
                 </button>
                 <div class="drop-down" v-if="raioGroup.open">
                   <button v-for="tag in raioGroup.tags" @click="radioClicked(raioGroup, tag)">
