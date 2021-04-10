@@ -16,20 +16,12 @@ const App = {
       radioGroups: [
         {
           question: "Are you currently in",
-          tags: [
-            "highschool",
-            "undergraduate",
-            "graduate",
-          ]
+          tags: ["highschool", "undergraduate", "graduate"]
         },
         {
           question: "What’s your availability?",
-          tags: [
-            "alldays",
-            "weekdays",
-            "weekends",
-          ]
-        },
+          tags: ["alldays", "weekdays", "weekends"]
+        }
       ],
       tagGroups: [
         {
@@ -111,8 +103,7 @@ const App = {
             ? []
             : hashtags.map(tag => tag.substring(1).toLowerCase());
 
-
-        if (Math.floor(Math.random()*2)===0) {
+        if (Math.floor(Math.random() * 2) === 0) {
           hashtags.push("events");
         }
         if (hashtags.indexOf("envirolab") > -1) {
@@ -209,6 +200,24 @@ const App = {
     reset() {
       for (let key in this.selected) {
         delete this.selected[key];
+      }
+    },
+    dropDownClicked() {
+      
+    },
+    radioClicked(raioGroup, tag) {
+      raioGroup.open = false;
+
+      raioGroup.tags.forEach(tag => {
+        if (this.selected[tag] !== undefined) {
+          delete this.selected[tag];
+        }
+      });
+
+      if (this.selected[tag] !== undefined) {
+        delete this.selected[tag];
+      } else {
+        this.selected[tag] = true;
       }
     }
   },

@@ -423,7 +423,8 @@ hr {
   text-align: left;
 
   color: #3D3D3D;
-  
+}
+.drop-down__placement {
   position: relative;
 }
 .drop-down {
@@ -435,8 +436,24 @@ hr {
   z-index: 10;
   border: 1px solid #3D3D3D;
 }
-.drop-down div {
+.drop-down button {
   padding: 8px 10px;
+  width: 100%;
+  background: none;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  display: block;
+
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-align: left;
+
+  color: #3D3D3D;
 }
 
 .call-to-action {

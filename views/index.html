@@ -12,7 +12,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FUnion.svg?v=1618001567817" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FUnion.svg?v=1618001567817"
+      type="image/x-icon"
+    />
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
@@ -42,36 +46,44 @@
               <p class="filters-lable">
                 FILTERS
               </p>
-              <button class="filters-reset" @click="reset" v-if="!selectedEmpty">
+              <button
+                class="filters-reset"
+                @click="reset"
+                v-if="!selectedEmpty"
+              >
                 Reset
               </button>
             </div>
-            
+
             <div class="tag-delete__con" v-if="!selectedEmpty">
-              <button class="tag-delete" v-for="(selectedTag, index) in selected" @click="delete selected[index]">
-                {{index}} <img src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FGroup.svg?v=1617992801227" />
+              <button
+                class="tag-delete"
+                v-for="(selectedTag, index) in selected"
+                @click="delete selected[index]"
+              >
+                {{index}}
+                <img
+                  src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FGroup.svg?v=1617992801227"
+                />
               </button>
             </div>
 
-            
-            
-            <lable v-for="raioGroup in radioGroups">
-            <p class="tag-question">
-              {{raioGroup.question}}
-            </p>
-            <button class="tag-button">
-              hello
-              
-              <div class="drop-down">
-                <div v-for="tag in raioGroup.tags">
-                  {{tag}}
+            <div v-for="raioGroup in radioGroups">
+              <p class="tag-question">
+                {{raioGroup.question}}
+              </p>
+              <div class="drop-down__placement">
+                <button class="tag-button" @click="raioGroup.open = raioGroup.open === undefined ? true : !raioGroup.open">
+                  hello
+                </button>
+                <div class="drop-down" v-if="raioGroup.open">
+                  <button v-for="tag in raioGroup.tags" @click="radioClicked(raioGroup, tag)">
+                    {{tag}}
+                  </button>
                 </div>
               </div>
-            </button>  
-            </lable>
+            </div>
           </div>
-
-          <hr />
 
           <p class="interest-question">
             Select the options you’re interested in.
@@ -166,7 +178,10 @@
               </a>
             </transition-group>
           </section>
-          <img class="contact-us-placeholder" src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FGroup%20635.svg?v=1617995629041"/>
+          <img
+            class="contact-us-placeholder"
+            src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FGroup%20635.svg?v=1617995629041"
+          />
         </div>
       </div>
     </div>
