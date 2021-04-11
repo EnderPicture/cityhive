@@ -14,6 +14,23 @@ function toTitleCase(str) {
 const App = {
   data() {
     return {
+      selectedNavLink: "HOME",
+      navLinks: [
+        { name: "HOME", url: "" },
+        { name: "ABOUT", url: "" },
+        { name: "PROGRAMS", url: "" },
+        { name: "WORK WITH US", url: "" },
+        { name: "WHAT’S NEW", url: "" },
+        { name: "CONTACT US", url: "" }
+      ]
+    };
+  }
+};
+
+const whatsnew = {
+  template: "#whatsnew",
+  data() {
+    return {
       instagramRawData: [],
       selected: {},
       radioGroups: [
@@ -80,15 +97,6 @@ const App = {
             "Richmond"
           ]
         }
-      ],
-      selectedNavLink: "HOME",
-      navLinks: [
-        { name: "HOME", url: "" },
-        { name: "ABOUT", url: "" },
-        { name: "PROGRAMS", url: "" },
-        { name: "WORK WITH US", url: "" },
-        { name: "WHAT’S NEW", url: "" },
-        { name: "CONTACT US", url: "" }
       ]
     };
   },
@@ -304,21 +312,20 @@ const App = {
   }
 };
 
-
-// const router = createRouter({
-//   history: createWebHistory(),
-//   routes: [
-//     {
-//       path: "/",
-//       component: blank
-//     },
-//     {
-//       path: "/programs",
-//       component: blank
-//     }
-//   ]
-// });
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    {
+      path: "/",
+      component: whatsnew
+    },
+    {
+      path: "/whatsnew",
+      component: whatsnew
+    }
+  ]
+});
 
 const app = createApp(App);
-app.mount("#app");
 app.use(router);
+app.mount("#app");

@@ -76,7 +76,10 @@
         </div>
       </template>
 
-      <template v-if="selectedNavLink === 'WHAT’S NEW'">
+      <router-view></router-view>
+    </div>
+    
+    <template type="text/x-template" id="whatsnew">
         <div class="left">
           <div class="left__con">
             <div>
@@ -242,12 +245,9 @@
               src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FGroup%20635.svg?v=1617995629041"
             />
           </div>
-        </div>
-      </template>
-<!--       <router-view></router-view> -->
-    </div>
+        </div>      
     
-    
+    </template>
     
     <script src="script.js"></script>
   </body>
