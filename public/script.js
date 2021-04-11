@@ -14,16 +14,19 @@ function toTitleCase(str) {
 const App = {
   data() {
     return {
-      selectedNavLink: "HOME",
+      
       navLinks: [
-        { name: "HOME", url: "" },
+        { name: "HOME", url: "/" },
         { name: "ABOUT", url: "" },
-        { name: "PROGRAMS", url: "" },
+        { name: "PROGRAMS", url: "/programs" },
         { name: "WORK WITH US", url: "" },
-        { name: "WHAT’S NEW", url: "" },
+        { name: "WHAT’S NEW", url: "/whatsnew" },
         { name: "CONTACT US", url: "" }
       ]
     };
+  },
+  computed() {
+    return ""
   }
 };
 
@@ -311,13 +314,30 @@ const whatsnew = {
       });
   }
 };
+const programDetails = {
+  template: "#program-details",
+}
+const home = {
+  template: "#home",
+}
+const programs = {
+  template: "#programs",
+}
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
       path: "/",
-      component: whatsnew
+      component: home
+    },
+    {
+      path: "/programs",
+      component: programs
+    },
+    {
+      path: "/programs/city-shapers",
+      component: programDetails
     },
     {
       path: "/whatsnew",

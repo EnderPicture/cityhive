@@ -30,225 +30,252 @@
             src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2Flogo.svg?v=1617993573778"
           />
           <div class="spacer"></div>
-          <a
+          <router-link
             v-for="link in navLinks"
+            :to="link.url"
             :class="{'slected-nav-link': link.name === selectedNavLink}"
-            @click="selectedNavLink = link.name"
-            >{{link.name}}</a
-          >
+            >{{link.name}}</router-link>
         </div>
       </nav>
-      <template v-if="selectedNavLink === 'HOME'">
-        <div class="center">
-          <div class="demo-con">
-            <div class="demo-con-placement">
-              <div class="demo-linking" style="top: 270px; left: 715px; height: 56px; width: 292px;" @click="selectedNavLink = 'WHAT’S NEW'"></div>
-              <div class="demo-linking" style="top: 338px; left: 715px; height: 56px; width: 326px;" @click="selectedNavLink = 'PROGRAMS'"></div>
-              <div class="demo-linking" style="top: 2022px; left: 715px; height: 714px; width: 1150px;" @click="selectedNavLink = 'PROGRAMS'"></div>
-              <img
-                src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FHome.svg?v=1618115909346"
-              />
-            </div>
-          </div>
-        </div>
-      </template>
-      <template v-if="selectedNavLink === 'PROGRAMS'">
-        <div class="center">
-          <div class="demo-con">
-            <div class="demo-con-placement">
-              <div class="demo-linking" style="top: 524px; left: 713px; height: 419px; width: 1074px;" @click="selectedNavLink = 'PROGRAMS DETAIL'"></div>
-              <img
-                src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FPrograms.svg?v=1618115913772"
-              />
-            </div>
-          </div>
-        </div>
-      </template>
-      <template v-if="selectedNavLink === 'PROGRAMS DETAIL'">
-        <div class="center">
-          <div class="demo-con">
-            <div class="demo-con-placement">
-              <img
-                src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FDetail%20Program.svg?v=1618116769314"
-              />
-            </div>
-          </div>
-        </div>
-      </template>
 
       <router-view></router-view>
     </div>
-    
+
+    <template type="text/x-template" id="home">
+      <div class="center">
+        <div class="demo-con">
+          <div class="demo-con-placement">
+            <div
+              class="demo-linking"
+              style="top: 270px; left: 715px; height: 56px; width: 292px;"
+              @click="selectedNavLink = 'WHAT’S NEW'"
+            ></div>
+            <div
+              class="demo-linking"
+              style="top: 338px; left: 715px; height: 56px; width: 326px;"
+              @click="selectedNavLink = 'PROGRAMS'"
+            ></div>
+            <div
+              class="demo-linking"
+              style="top: 2022px; left: 715px; height: 714px; width: 1150px;"
+              @click="selectedNavLink = 'PROGRAMS'"
+            ></div>
+            <img
+              src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FHome.svg?v=1618115909346"
+            />
+          </div>
+        </div></div
+    ></template>
+    <template type="text/x-template" id="programs">
+      <div class="center">
+        <div class="demo-con">
+          <div class="demo-con-placement">
+            <div
+              class="demo-linking"
+              style="top: 524px; left: 713px; height: 419px; width: 1074px;"
+              @click="selectedNavLink = 'PROGRAMS DETAIL'"
+            ></div>
+            <img
+              src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FPrograms.svg?v=1618115913772"
+            />
+          </div>
+        </div></div
+    ></template>
+    <template type="text/x-template" id="programdetails">
+      <div class="center">
+        <div class="demo-con">
+          <div class="demo-con-placement">
+            <div
+              class="demo-linking"
+              style="top: 270px; left: 715px; height: 56px; width: 292px;"
+              @click="selectedNavLink = 'WHAT’S NEW'"
+            ></div>
+            <div
+              class="demo-linking"
+              style="top: 338px; left: 715px; height: 56px; width: 326px;"
+              @click="selectedNavLink = 'PROGRAMS'"
+            ></div>
+            <div
+              class="demo-linking"
+              style="top: 2022px; left: 715px; height: 714px; width: 1150px;"
+              @click="selectedNavLink = 'PROGRAMS'"
+            ></div>
+            <img
+              src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FHome.svg?v=1618115909346"
+            />
+          </div>
+        </div></div
+    ></template>
+
     <template type="text/x-template" id="whatsnew">
-        <div class="left">
-          <div class="left__con">
-            <div>
-              <p class="call-to-action">
-                Discover what’s right for you!
-              </p>
-            </div>
-
-            <hr />
-
-            <div class="filters-select-con">
-              <div class="filters-top">
-                <p class="filters-lable">
-                  FILTERS
-                </p>
-                <button
-                  class="filters-reset"
-                  @click="reset"
-                  v-if="!selectedEmpty"
-                >
-                  Reset
-                </button>
-              </div>
-
-              <div class="tag-delete__con" v-if="!selectedEmpty">
-                <button
-                  class="tag-delete"
-                  v-for="(selectedTag, index) in selected"
-                  @click="delete selected[index]"
-                >
-                  {{index}}
-                  <img
-                    src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FGroup.svg?v=1617992801227"
-                  />
-                </button>
-              </div>
-
-              <div v-for="(raioGroup, index) in radioGroups">
-                <p class="tag-question">
-                  {{raioGroup.question}}
-                </p>
-                <div class="drop-down__placement">
-                  <button class="tag-button" @click="dropDownClicked(index)">
-                    <p>
-                      {{dropDownText(index)}}
-                    </p>
-                    <img
-                      :class="{'arrow':true, 'arrow_rotated': raioGroup.open}"
-                      src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FVector.svg?v=1617946272700"
-                    />
-                  </button>
-                  <div
-                    class="drop-down"
-                    v-if="raioGroup.open"
-                    @click="raioGroup.open = false"
-                  >
-                    <button
-                      v-for="tag in raioGroup.tags"
-                      @click="radioClicked(raioGroup, tag)"
-                    >
-                      {{tag}}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <p class="interest-question">
-              Select the options you’re interested in.
+      <div class="left">
+        <div class="left__con">
+          <div>
+            <p class="call-to-action">
+              Discover what’s right for you!
             </p>
+          </div>
 
-            <section v-for="group in tagGroups">
-              <h3
-                class="tag-headers"
-                @click="group.open = group.open === undefined ? true : !group.open"
+          <hr />
+
+          <div class="filters-select-con">
+            <div class="filters-top">
+              <p class="filters-lable">
+                FILTERS
+              </p>
+              <button
+                class="filters-reset"
+                @click="reset"
+                v-if="!selectedEmpty"
               >
-                <button>
-                  <span>{{group.name}}</span>
+                Reset
+              </button>
+            </div>
+
+            <div class="tag-delete__con" v-if="!selectedEmpty">
+              <button
+                class="tag-delete"
+                v-for="(selectedTag, index) in selected"
+                @click="delete selected[index]"
+              >
+                {{index}}
+                <img
+                  src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FGroup.svg?v=1617992801227"
+                />
+              </button>
+            </div>
+
+            <div v-for="(raioGroup, index) in radioGroups">
+              <p class="tag-question">
+                {{raioGroup.question}}
+              </p>
+              <div class="drop-down__placement">
+                <button class="tag-button" @click="dropDownClicked(index)">
+                  <p>
+                    {{dropDownText(index)}}
+                  </p>
                   <img
-                    :class="{'arrow':true, 'arrow_rotated': group.open}"
+                    :class="{'arrow':true, 'arrow_rotated': raioGroup.open}"
                     src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FVector.svg?v=1617946272700"
                   />
                 </button>
-              </h3>
-
-              <div class="tags" v-show="group.open">
-                <button
-                  :class="{'tag':true, 'tag_selected':selected[tag]===true}"
-                  v-for="tag in group.tags"
-                  @click="tagClicked(tag)"
+                <div
+                  class="drop-down"
+                  v-if="raioGroup.open"
+                  @click="raioGroup.open = false"
                 >
-                  <div class="check">
-                    <img
-                      class="check__unchecked"
-                      src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FRectangle%20387.svg?v=1617936790586"
-                    />
-                    <img
-                      class="check__checked"
-                      src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FGroup%20305.svg?v=1617936793776"
-                    />
-                  </div>
-                  <p>{{tag}}</p>
-                </button>
+                  <button
+                    v-for="tag in raioGroup.tags"
+                    @click="radioClicked(raioGroup, tag)"
+                  >
+                    {{tag}}
+                  </button>
+                </div>
               </div>
-            </section>
-            <!--    old hashtags          -->
-            <!--     <button
+            </div>
+          </div>
+
+          <p class="interest-question">
+            Select the options you’re interested in.
+          </p>
+
+          <section v-for="group in tagGroups">
+            <h3
+              class="tag-headers"
+              @click="group.open = group.open === undefined ? true : !group.open"
+            >
+              <button>
+                <span>{{group.name}}</span>
+                <img
+                  :class="{'arrow':true, 'arrow_rotated': group.open}"
+                  src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FVector.svg?v=1617946272700"
+                />
+              </button>
+            </h3>
+
+            <div class="tags" v-show="group.open">
+              <button
+                :class="{'tag':true, 'tag_selected':selected[tag]===true}"
+                v-for="tag in group.tags"
+                @click="tagClicked(tag)"
+              >
+                <div class="check">
+                  <img
+                    class="check__unchecked"
+                    src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FRectangle%20387.svg?v=1617936790586"
+                  />
+                  <img
+                    class="check__checked"
+                    src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FGroup%20305.svg?v=1617936793776"
+                  />
+                </div>
+                <p>{{tag}}</p>
+              </button>
+            </div>
+          </section>
+          <!--    old hashtags          -->
+          <!--     <button
               :class="{'tag':true, 'tag_selected':selected[tag.name]===true}"
               v-for="tag in hashtags"
               @click="tagClicked(tag.name)"
             >
               {{tag.name}} - {{tag.count}}
             </button> -->
-          </div>
         </div>
-        <div class="right">
-          <img
-            class="background"
-            src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FVector%20537.svg?v=1617947325315"
-          />
-          <div class="right__con">
-            <div class="title__con">
-              <h1 class="title">What’s new</h1>
-              <p class="title__message">
-                Don’t miss a thing - Check out our program updates, blog, new
-                opportunities, and open applications below.
-              </p>
-            </div>
-
-            <section class="section">
-              <h2 class="section-titles" v-if="!selectedEmpty">
-                Our recommendation
-              </h2>
-              <h2 class="section-titles" v-else>
-                Events
-              </h2>
-
-              <transition-group tag="div" name="list-complete" class="posts">
-                <a
-                  class="post list-complete-item"
-                  v-for="post in instagramDataFiltered"
-                  :ref="post.id"
-                  :key="post.id"
-                  :href="'https://www.instagram.com/p/'+post.shortcode+'/'"
-                  target="_blank"
-                >
-                  <div>
-                    <img :src="post.thumbnail" alt="" loading="lazy" />
-                  </div>
-                  <h3>
-                    {{post.title}}
-                  </h3>
-                  <p>
-                    {{post.caption}}
-                    <span class="gradient"></span>
-                  </p>
-                  <p class="learn">Learn more</p>
-                </a>
-              </transition-group>
-            </section>
-            <img
-              class="contact-us-placeholder"
-              src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FGroup%20635.svg?v=1617995629041"
-            />
+      </div>
+      <div class="right">
+        <img
+          class="background"
+          src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FVector%20537.svg?v=1617947325315"
+        />
+        <div class="right__con">
+          <div class="title__con">
+            <h1 class="title">What’s new</h1>
+            <p class="title__message">
+              Don’t miss a thing - Check out our program updates, blog, new
+              opportunities, and open applications below.
+            </p>
           </div>
-        </div>      
-    
+
+          <section class="section">
+            <h2 class="section-titles" v-if="!selectedEmpty">
+              Our recommendation
+            </h2>
+            <h2 class="section-titles" v-else>
+              Events
+            </h2>
+
+            <transition-group tag="div" name="list-complete" class="posts">
+              <a
+                class="post list-complete-item"
+                v-for="post in instagramDataFiltered"
+                :ref="post.id"
+                :key="post.id"
+                :href="'https://www.instagram.com/p/'+post.shortcode+'/'"
+                target="_blank"
+              >
+                <div>
+                  <img :src="post.thumbnail" alt="" loading="lazy" />
+                </div>
+                <h3>
+                  {{post.title}}
+                </h3>
+                <p>
+                  {{post.caption}}
+                  <span class="gradient"></span>
+                </p>
+                <p class="learn">Learn more</p>
+              </a>
+            </transition-group>
+          </section>
+          <img
+            class="contact-us-placeholder"
+            src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FGroup%20635.svg?v=1617995629041"
+          />
+        </div>
+      </div>
     </template>
-    
+
     <script src="script.js"></script>
   </body>
 </html>
