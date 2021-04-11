@@ -510,6 +510,11 @@ a.slected-nav-link::before {
 .center {
   grid-column-start: 1;
   grid-column-end: -1;
+  overflow-y: scroll;
+}
+.center img {
+  display: block;
+  margin: auto;
 }
 
 .list-complete-item {
