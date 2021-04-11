@@ -14,7 +14,6 @@ function toTitleCase(str) {
 const App = {
   data() {
     return {
-      
       navLinks: [
         { name: "HOME", url: "/" },
         { name: "ABOUT", url: "-" },
@@ -24,7 +23,7 @@ const App = {
         { name: "CONTACT US", url: "-" }
       ]
     };
-  },
+  }
 };
 
 const whatsnew = {
@@ -312,14 +311,14 @@ const whatsnew = {
   }
 };
 const programDetails = {
-  template: "#program-details",
-}
+  template: "#program-details"
+};
 const home = {
-  template: "#home",
-}
+  template: "#home"
+};
 const programs = {
-  template: "#programs",
-}
+  template: "#programs"
+};
 
 const router = createRouter({
   history: createWebHistory(),
@@ -330,11 +329,21 @@ const router = createRouter({
     },
     {
       path: "/programs",
-      component: programs
-    },
-    {
-      path: "/programs/city-shapers",
-      component: programDetails
+      component: programs,
+      children: [
+        {
+          // UserProfile will be rendered inside User's <router-view>
+          // when /user/:id/profile is matched
+          path: "",
+          component: programDetails
+        }
+        {
+          // UserProfile will be rendered inside User's <router-view>
+          // when /user/:id/profile is matched
+          path: "city-shapers",
+          component: programDetails
+        }
+      ]
     },
     {
       path: "/whatsnew",
