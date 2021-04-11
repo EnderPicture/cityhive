@@ -507,6 +507,11 @@ a.slected-nav-link::before {
   margin: auto;
 }
 
+.center {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
 .list-complete-item {
   transition: all 0.8s ease;
 }
