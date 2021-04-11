@@ -252,10 +252,11 @@ const whatsnew = {
     }
   },
   methods: {
-    beforeEnterExpand(e) {
-      e.style.height = e.children[0].clientHeight;
+    enterExpand(e) {
+      console.log(e.children[0].offsetHeight+"px");
+      e.style.height = e.children[0].offsetHeight+"px";
     },
-    beforeLeaveExpand(e) {
+    leaveExpand(e) {
       e.style.height = '0px';
     },
     tagClicked(tag) {

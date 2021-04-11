@@ -263,6 +263,7 @@ hr {
 
 .tags {
   margin: 0 var(--tags-padding);
+  overflow: hidden;
 }
 
 .tag-delete__con {
@@ -578,5 +579,5 @@ hr {
 
 .expand-enter-active,
 .expand-leave-active {
-  transition: .5s ease;
+  transition: 5s ease;
 }
