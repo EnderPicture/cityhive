@@ -26,16 +26,18 @@ fs.readFile("./.data/data.json", "utf8", (err, data) => {
 // https://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
 
-// https://expressjs.com/en/starter/basic-routing.html
-app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/views/index.html");
-});
-
 // send instagram data to webpage
 app.get("/instagram-data", (request, response) => {
   // express helps us take JS objects and send them as JSON
   response.json(instasgramData);
 });
+
+// https://expressjs.com/en/starter/basic-routing.html
+app.get("/*", (request, response) => {
+  response.sendFile(__dirname + "/views/index.html");
+});
+
+
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {

@@ -69,7 +69,7 @@ hr {
   display: flex;
   align-items: center;
 }
-.nav__inner-con a {
+.nav__inner-con .nav-link {
   font-family: Lato;
   font-size: 14px;
   font-style: normal;
@@ -85,11 +85,11 @@ hr {
   align-items: center;
   cursor: pointer;
 }
-a.slected-nav-link {
+.nav-link.router-link-exact-active {
   font-weight: bold;
   position: relative;
 }
-a.slected-nav-link::before {
+.nav-link.router-link-exact-active::before {
   content: '';
   position: absolute;
   bottom: 0;

@@ -25,9 +25,6 @@ const App = {
       ]
     };
   },
-  computed() {
-    return ""
-  }
 };
 
 const whatsnew = {
