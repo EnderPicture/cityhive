@@ -513,8 +513,11 @@ a.slected-nav-link::before {
   overflow-y: scroll;
 }
 .center img {
+  transform: translateZ(0);
   display: block;
   margin: auto;
+  width: 1440px;
+/*   width: 100%; */
 }
 
 .list-complete-item {
