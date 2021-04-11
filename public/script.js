@@ -301,9 +301,13 @@ const App = {
   }
 };
 
+
 const router = createRouter({
   history: createWebHistory(),
-  routes: []
+  routes: [{
+    path: '/',
+    name: 'home'
+  }]
 });
 
 const app = createApp(App);
