@@ -69,10 +69,7 @@ hr {
   display: flex;
   align-items: center;
 }
-.nav__inner-con button {
-  background: none;
-  border: none;
-  
+.nav__inner-con a {
   font-family: Lato;
   font-size: 14px;
   font-style: normal;
@@ -87,18 +84,12 @@ hr {
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: #3D3D3D;
-
 }
-.nav__inner-con button:disabled {
-  color: #3D3D3D;
-  cursor: not-allowed;
-}
-button.slected-nav-link {
+a.slected-nav-link {
   font-weight: bold;
   position: relative;
 }
-button.slected-nav-link::before {
+a.slected-nav-link::before {
   content: '';
   position: absolute;
   bottom: 0;

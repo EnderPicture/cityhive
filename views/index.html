@@ -19,6 +19,7 @@
     />
 
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vue-router@next"></script>
   </head>
   <body>
     <div id="app">
@@ -29,12 +30,11 @@
             src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2Flogo.svg?v=1617993573778"
           />
           <div class="spacer"></div>
-          <button
+          <a
             v-for="link in navLinks"
             :class="{'slected-nav-link': link.name === selectedNavLink}"
-            :disabled="link.disabled"
             @click="selectedNavLink = link.name"
-            >{{link.name}}</button
+            >{{link.name}}</a
           >
         </div>
       </nav>
@@ -244,7 +244,10 @@
           </div>
         </div>
       </template>
-    </div>    
+      <router-view></router-view>
+    </div>
+    
+    
     
     <script src="script.js"></script>
   </body>
