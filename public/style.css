@@ -527,7 +527,8 @@ a.slected-nav-link::before {
 }
 .demo-linking {
   position: absolute;
-  background-color: red;
+  cursor: pointer;
+/*   background-color: red; */
 }
 
 .list-complete-item {
