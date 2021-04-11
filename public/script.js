@@ -259,6 +259,9 @@ const whatsnew = {
     leaveExpand(e) {
       e.style.height = '0px';
     },
+    afterEnterExpand(e) {
+      e.style.height = 'auto'  ;
+    },
     tagClicked(tag) {
       if (this.selected[tag] !== undefined) {
         delete this.selected[tag];

@@ -265,6 +265,7 @@ hr {
   margin: 0 var(--tags-padding);
   overflow: hidden;
   height: 0px;
+  margin-bottom: 24px;
 }
 
 .tag-delete__con {
@@ -311,6 +312,9 @@ hr {
 .tag:first-child {
   margin-top: 0;
 }
+.tag:last-child {
+  margin-bottom: 0;
+}
 .tag p {
   font-family: Lato;
   font-size: 16px;
@@ -346,8 +350,7 @@ hr {
 
 .tag-headers {
   margin: 0 var(--tags-padding);
-  margin-bottom: 0;
-  margin-top: 24px;
+  padding-bottom: 16px;
 }
 .tag-headers button {
   border: none;
@@ -417,6 +420,7 @@ hr {
 .interest-question {
   margin: 0 0 0 var(--tags-padding);
   margin-top: 15px;
+  margin-bottom: 24px;
 
   font-family: Lato;
   font-size: 16px;
@@ -586,6 +590,7 @@ hr {
 }
 .expand-enter-from,
 .expand-leave-to {
+  opacity: 0;
   margin-top: 0;
   margin-bottom: 0;
 }

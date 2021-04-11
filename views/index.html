@@ -184,6 +184,8 @@
             <transition
               @enter="enterExpand"
               @leave="leaveExpand"
+              @before-leave="enterExpand"
+              @after-enter="afterEnterExpand"
               name="expand"
             >
               <div class="tags" v-show="group.open">
