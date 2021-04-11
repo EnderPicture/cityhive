@@ -586,7 +586,7 @@ hr {
 
 .expand-enter-active,
 .expand-leave-active {
-  transition: .5s ease;
+  transition: .2s ease;
 }
 .expand-enter-from,
 .expand-leave-to {
