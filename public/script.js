@@ -218,6 +218,9 @@ const App = {
       sorted.sort((a, b) => b.count - a.count);
 
       return sorted;
+    },
+    route() {
+      return this.$router.route;
     }
   },
   watch: {
@@ -301,13 +304,19 @@ const App = {
   }
 };
 
-
+const blank = { template: "<div></div>" };
 const router = createRouter({
   history: createWebHistory(),
-  routes: [{
-    path: '/',
-    name: 'home'
-  }]
+  routes: [
+    {
+      path: "/",
+      component: blank
+    },
+    {
+      path: "/programs",
+      component: blank
+    }
+  ]
 });
 
 const app = createApp(App);
