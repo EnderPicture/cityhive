@@ -138,8 +138,7 @@
               <p class="tag-question">
                 {{raioGroup.question}}
               </p>
-              
-                
+
               <div class="drop-down__placement">
                 <button class="tag-button" @click="dropDownClicked(index)">
                   <p>
@@ -151,23 +150,19 @@
                   />
                 </button>
                 <transition name="fade">
-                <div
-                  class="drop-down"
-                  v-if="raioGroup.open"
-                  @click="raioGroup.open = false"
-                >
-                  <button
-                    v-for="tag in raioGroup.tags"
-                    @click="radioClicked(raioGroup, tag)"
+                  <div
+                    class="drop-down"
+                    v-if="raioGroup.open"
                   >
-                    {{tag}}
-                  </button>
-                </div>
-                
+                    <button
+                      v-for="tag in raioGroup.tags"
+                      @click="radioClicked(raioGroup, tag)"
+                    >
+                      {{tag}}
+                    </button>
+                  </div>
                 </transition>
               </div>
-                
-              
             </div>
           </div>
 

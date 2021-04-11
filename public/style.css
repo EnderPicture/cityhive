@@ -79,10 +79,10 @@ hr {
   text-align: center;
   margin-left: 55px;
   padding: 0 8px;
-  
+
   color: #3D3D3D;
   text-decoration: none;
-  
+
   height: 100%;
   display: flex;
   align-items: center;
@@ -96,7 +96,7 @@ hr {
   position: relative;
 }
 .nav-link.router-link-active::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -105,7 +105,6 @@ hr {
   height: 3px;
   border-radius: 20px;
 }
-
 
 .spacer {
   flex: 1;
@@ -460,7 +459,7 @@ hr {
   position: relative;
 }
 .drop-down {
-  position:absolute;
+  position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
@@ -468,11 +467,11 @@ hr {
   z-index: 10;
   border: 1px solid #3D3D3D;
   border-radius: 0 0 6px 6px;
-/*   overflow: hidden; */
+  /*   overflow: hidden; */
   border-top: none;
   padding-top: 6px;
   transform: translateY(-6px);
-/*   box-shadow: 0px -6px 0px red; */
+  /*   box-shadow: 0px -6px 0px red; */
 }
 .drop-down button {
   padding: 8px 10px;
@@ -508,7 +507,7 @@ hr {
 }
 
 .contact-us-placeholder {
-/*   width: 100%; */
+  /*   width: 100%; */
   display: block;
   margin: auto;
 }
@@ -537,7 +536,7 @@ hr {
 .demo-linking {
   position: absolute;
   cursor: pointer;
-/*   background-color: red; */
+  /*   background-color: red; */
 }
 
 .list-complete-item {
@@ -557,10 +556,13 @@ hr {
   position: absolute;
 }
 
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease,  transform 0.2s ease;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
+  transform: translateY(-1rem);
 }
