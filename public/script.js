@@ -319,6 +319,9 @@ const home = {
 const programs = {
   template: "#programs"
 };
+const programsCon = {
+  template: "#programs-con"
+}
 
 const router = createRouter({
   history: createWebHistory(),
@@ -329,14 +332,14 @@ const router = createRouter({
     },
     {
       path: "/programs",
-      component: programs,
+      component: programsCon,
       children: [
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
           path: "",
-          component: programDetails
-        }
+          component: programs
+        },
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
