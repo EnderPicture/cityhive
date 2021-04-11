@@ -510,17 +510,21 @@ a.slected-nav-link::before {
 .center {
   grid-column-start: 1;
   grid-column-end: -1;
-  overflow-y: scroll;
 }
 .demo-con {
   max-width: 100%;
   overflow-x: hidden;
   margin: auto;
+  position: relative;
+  height: 100%;
 }
 .demo-con img {
-  transform: translateZ(0);
-  display: block;
-  width: 1440px;
+  transform: translateZ(0) translateX(-50%);
+  position: absolute;
+  top: 0;
+  left: 50%;
+/*   display: block; */
+/*   width: 1440px; */
   margin: 0;
 }
 

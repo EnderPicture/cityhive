@@ -81,7 +81,7 @@ const App = {
           ]
         }
       ],
-      selectedNavLink: "WHAT’S NEW",
+      selectedNavLink: "HOME",
       navLinks: [
         { name: "HOME", url: "" },
         { name: "ABOUT", url: "" },
