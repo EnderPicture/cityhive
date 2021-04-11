@@ -575,3 +575,8 @@ hr {
   opacity: 0;
   transform: translateY(-1rem);
 }
+
+.expand-enter-active,
+.expand-leave-active {
+  transition: .5s ease;
+}

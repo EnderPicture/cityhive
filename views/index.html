@@ -182,13 +182,11 @@
             </h3>
 
             <transition
-             
-              v-on:before-enter="beforeEnter"
-              v-on:enter="enter"
-              v-on:leave="leave"
-              v-bind:css="false"
+              @before-enter="beforeEnterExpand"
+              @before-leave="beforeLeaveExpand"
+              name="expand"
             >
-              <div class="tags" v-if="group.open">
+              <div class="tags" v-show="group.open">
                 <div>
                   <button
                     :class="{'tag':true, 'tag_selected':selected[tag]===true}"

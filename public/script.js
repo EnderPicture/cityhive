@@ -252,6 +252,12 @@ const whatsnew = {
     }
   },
   methods: {
+    beforeEnterExpand(e) {
+      e.style.height = e.children[0].clientHeight;
+    },
+    beforeLeaveExpand(e) {
+      e.style.height = '0px';
+    },
     tagClicked(tag) {
       if (this.selected[tag] !== undefined) {
         delete this.selected[tag];
