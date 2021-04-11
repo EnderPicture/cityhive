@@ -17,11 +17,11 @@ const App = {
       
       navLinks: [
         { name: "HOME", url: "/" },
-        { name: "ABOUT", url: "" },
+        { name: "ABOUT", url: "-" },
         { name: "PROGRAMS", url: "/programs" },
-        { name: "WORK WITH US", url: "" },
+        { name: "WORK WITH US", url: "-" },
         { name: "WHAT’S NEW", url: "/whatsnew" },
-        { name: "CONTACT US", url: "" }
+        { name: "CONTACT US", url: "-" }
       ]
     };
   },

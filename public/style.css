@@ -80,10 +80,16 @@ hr {
   margin-left: 55px;
   padding: 0 8px;
   
+  color: #3D3D3D;
+  text-decoration: none;
+  
   height: 100%;
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+.nav-link_disabled {
+  pointer-events: none;
 }
 .nav-link.router-link-exact-active {
   font-weight: bold;
