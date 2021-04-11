@@ -29,12 +29,12 @@
             src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2Flogo.svg?v=1617993573778"
           />
           <div class="spacer"></div>
-          <a
+          <button
             v-for="link in navLinks"
             :class="{'slected-nav-link': link.name === selectedNavLink}"
-             
+            :disabled="link.disabled"
             @click="selectedNavLink = link.name"
-            >{{link.name}}</a
+            >{{link.name}}</button
           >
         </div>
       </nav>
