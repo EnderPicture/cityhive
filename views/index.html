@@ -138,6 +138,8 @@
               <p class="tag-question">
                 {{raioGroup.question}}
               </p>
+              
+                
               <div class="drop-down__placement">
                 <button class="tag-button" @click="dropDownClicked(index)">
                   <p>
@@ -148,6 +150,7 @@
                     src="https://cdn.glitch.com/223c232a-6957-494c-8be6-b66248175f3e%2FVector.svg?v=1617946272700"
                   />
                 </button>
+                <transition name="fade">
                 <div
                   class="drop-down"
                   v-if="raioGroup.open"
@@ -160,7 +163,11 @@
                     {{tag}}
                   </button>
                 </div>
+                
+                </transition>
               </div>
+                
+              
             </div>
           </div>
 
