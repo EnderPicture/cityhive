@@ -20,7 +20,7 @@ const App = {
         {
           question: "What’s your current education level?",
           prefill: "Select one option",
-          tags: ["Highschool", "Under Graduate", "Graduate"]
+          tags: ["Highschool", "Undergraduate", "Graduate"]
         },
         {
           question: "What’s your availability?",
@@ -81,6 +81,7 @@ const App = {
           ]
         }
       ],
+      selectedNavLink: "WHAT’S NEW",
       navLinks: [
         { name: "HOME", url: "" },
         { name: "ABOUT", url: "" },

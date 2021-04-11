@@ -79,6 +79,9 @@ hr {
   text-align: center;
   margin-left: 55px;
 }
+.slected-nav-link {
+  font-weight: bold;
+}
 .spacer {
   flex: 1;
 }
