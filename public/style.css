@@ -531,6 +531,9 @@ hr {
   left: 50%;
   margin: 0;
 }
+/* .demo-con-placement img {
+  pointer-events: none;
+} */
 .demo-linking {
   position: absolute;
   cursor: pointer;
