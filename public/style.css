@@ -518,14 +518,16 @@ a.slected-nav-link::before {
   position: relative;
   height: 100%;
 }
-.demo-con img {
+.demo-con-placement {
   transform: translateZ(0) translateX(-50%);
   position: absolute;
   top: 0;
   left: 50%;
-/*   display: block; */
-/*   width: 1440px; */
   margin: 0;
+}
+.demo-linking {
+  position: absolute;
+  background-color: red;
 }
 
 .list-complete-item {
