@@ -223,9 +223,6 @@ const App = {
     }
   },
   watch: {
-    selectedNavLink(newLink) {
-      history.pushState(newLink, newLink);
-    },
     instagramDataFiltered(after, before) {
       let afterIds = after.map(post => post.id);
       let beforeIds = before.map(post => post.id);
