@@ -264,6 +264,7 @@ hr {
 .tags {
   margin: 0 var(--tags-padding);
   overflow: hidden;
+  height: 0px;
 }
 
 .tag-delete__con {
@@ -307,6 +308,9 @@ hr {
   padding: 0;
   margin: 16px 0;
 }
+.tag:first-child {
+  margin-top: 0;
+}
 .tag p {
   font-family: Lato;
   font-size: 16px;
@@ -342,8 +346,7 @@ hr {
 
 .tag-headers {
   margin: 0 var(--tags-padding);
-
-  margin-bottom: 16px;
+  margin-bottom: 0;
   margin-top: 24px;
 }
 .tag-headers button {
@@ -579,5 +582,10 @@ hr {
 
 .expand-enter-active,
 .expand-leave-active {
-  transition: 5s ease;
+  transition: .5s ease;
+}
+.expand-enter-from,
+.expand-leave-to {
+  margin-top: 0;
+  margin-bottom: 0;
 }
