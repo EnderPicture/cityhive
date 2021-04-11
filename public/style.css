@@ -78,10 +78,29 @@ hr {
   letter-spacing: 0.02em;
   text-align: center;
   margin-left: 55px;
+  padding: 0 8px;
+  
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
-.slected-nav-link {
+a.slected-nav-link {
   font-weight: bold;
+  position: relative;
 }
+a.slected-nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #00E6A2;
+  height: 3px;
+  border-radius: 20px;
+}
+
+
 .spacer {
   flex: 1;
 }
