@@ -304,20 +304,20 @@ const App = {
   }
 };
 
-const blank = { template: "<div></div>" };
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    {
-      path: "/",
-      component: blank
-    },
-    {
-      path: "/programs",
-      component: blank
-    }
-  ]
-});
+
+// const router = createRouter({
+//   history: createWebHistory(),
+//   routes: [
+//     {
+//       path: "/",
+//       component: blank
+//     },
+//     {
+//       path: "/programs",
+//       component: blank
+//     }
+//   ]
+// });
 
 const app = createApp(App);
 app.mount("#app");
