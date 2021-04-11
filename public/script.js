@@ -1,4 +1,3 @@
-const { createRouter, createWebHistory, createWebHashHistory } = VueRouter;
 const { createApp } = Vue;
 
 function toTitleCase(str) {
@@ -84,11 +83,11 @@ const App = {
       selectedNavLink: "HOME",
       navLinks: [
         { name: "HOME", url: "" },
-        { name: "ABOUT", url: "" },
+        { name: "ABOUT", url: "", disabled: true },
         { name: "PROGRAMS", url: "" },
-        { name: "WORK WITH US", url: "" },
+        { name: "WORK WITH US", url: "", disabled: true},
         { name: "WHAT’S NEW", url: "" },
-        { name: "CONTACT US", url: "" }
+        { name: "CONTACT US", url: "", disabled: true}
       ]
     };
   },
@@ -304,21 +303,6 @@ const App = {
   }
 };
 
-const blank = { template: "<div></div>" };
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    {
-      path: "/",
-      component: blank
-    },
-    {
-      path: "/programs",
-      component: blank
-    }
-  ]
-});
 
 const app = createApp(App);
 app.mount("#app");
-app.use(router);

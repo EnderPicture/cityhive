@@ -19,7 +19,6 @@
     />
 
     <script src="https://unpkg.com/vue@next"></script>
-    <script src="https://unpkg.com/vue-router@next"></script>
   </head>
   <body>
     <div id="app">
@@ -33,6 +32,7 @@
           <a
             v-for="link in navLinks"
             :class="{'slected-nav-link': link.name === selectedNavLink}"
+             
             @click="selectedNavLink = link.name"
             >{{link.name}}</a
           >
@@ -244,10 +244,7 @@
           </div>
         </div>
       </template>
-      <router-view></router-view>
-    </div>
-    
-    
+    </div>    
     
     <script src="script.js"></script>
   </body>
