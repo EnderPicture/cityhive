@@ -110,7 +110,7 @@ const whatsnew = {
 
         let title =
           hashtags === null
-            ? "CithHive"
+            ? "City Hive"
             : hashtags[0]
                 .substring(1)
                 .replace(/([A-Z])/g, " $1")
@@ -123,25 +123,28 @@ const whatsnew = {
             : hashtags.map((tag) => tag.substring(1).toLowerCase());
 
         //         fake tages adder
-        if (Math.floor(Math.random() * 2) === 0) {
-          hashtags.push("events");
-        }
+        let tags = this.tagGroups.reduce((append, current) => [...append, ...current.tags], []);
+        tags.forEach(tag => {
+          if (Math.floor(Math.random() * 5) === 0) {
+            hashtags.push(tag.toLowerCase());
+          }
+        })
 
-        if (Math.floor(Math.random() * 5) === 0) {
-          hashtags.push("publicspeaking");
-        }
-        if (Math.floor(Math.random() * 5) === 0) {
-          hashtags.push("designthinking");
-        }
-        if (Math.floor(Math.random() * 5) === 0) {
-          hashtags.push("proposalwriting");
-        }
-        if (Math.floor(Math.random() * 5) === 0) {
-          hashtags.push("leadership");
-        }
-        if (Math.floor(Math.random() * 5) === 0) {
-          hashtags.push("network");
-        }
+        // if (Math.floor(Math.random() * 5) === 0) {
+        //   hashtags.push("publicspeaking");
+        // }
+        // if (Math.floor(Math.random() * 5) === 0) {
+        //   hashtags.push("designthinking");
+        // }
+        // if (Math.floor(Math.random() * 5) === 0) {
+        //   hashtags.push("proposalwriting");
+        // }
+        // if (Math.floor(Math.random() * 5) === 0) {
+        //   hashtags.push("leadership");
+        // }
+        // if (Math.floor(Math.random() * 5) === 0) {
+        //   hashtags.push("network");
+        // }
 
         if (Math.floor(Math.random() * 5) === 0) {
           hashtags.push("weekends");
@@ -157,17 +160,17 @@ const whatsnew = {
           hashtags.push("graduate");
         }
 
-        if (Math.floor(Math.random() * 2) === 0) {
-          hashtags.push("1-2hours");
-        } else if (Math.floor(Math.random() * 2) === 0) {
-          hashtags.push("2-4hours");
-        } else {
-          hashtags.push("morethan4hours");
-        }
+        // if (Math.floor(Math.random() * 2) === 0) {
+        //   hashtags.push("1-2hours");
+        // } else if (Math.floor(Math.random() * 2) === 0) {
+        //   hashtags.push("2-4hours");
+        // } else {
+        //   hashtags.push("morethan4hours");
+        // }
 
-        if (hashtags.indexOf("envirolab") > -1) {
-          hashtags.push("innovationlab");
-        }
+        // if (hashtags.indexOf("envirolab") > -1) {
+        //   hashtags.push("innovationlab");
+        // }
 
         let postObj = {
           img: post.node.display_url,
