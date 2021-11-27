@@ -126,7 +126,7 @@ const whatsnew = {
         let tags = this.tagGroups.reduce((append, current) => [...append, ...current.tags], []);
         tags.forEach(tag => {
           if (Math.floor(Math.random() * 5) === 0) {
-            hashtags.push(tag.toLowerCase());
+            hashtags.push(tag.replaceAll(" ", "").toLowerCase());
           }
         })
 
