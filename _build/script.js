@@ -313,10 +313,10 @@ const whatsnew = {
     },
   },
   created() {
-    fetch("/data.json")
+    fetch("data.json")
       .then((response) => response.json()) // parse the JSON from the server
       .then((data) => {
-        this.instagramRawData.push(...data);
+        this.instagramRawData.push(...(data.data.user.edge_owner_to_timeline_media.edges));
       });
   },
 };
